@@ -1,3 +1,136 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+  padding-top: 3.5em;
+  color: #fff;
+  text-align: center;
+  background-image: url("landing/header.jpg");
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 23em;
+  header {
+    text-align: center;
+    color: black;
+    font-size: 1.7em;
+  }
+  ul li {
+    display: inline;
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: 1em;
+    color: black;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.top {
+  padding: 4em 0em 5em;
+  background-color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  img {
+    margin: 0 auto;
+    padding: 3em 0em 3em;
+  }
+  p {
+    font-size: 1.4em;
+  }
+  article {
+    text-align: center;
+    &:first-child {
+      float: left;
+    }
+    &:last-child {
+      float: right;
+    }
+  }
+}
+
+.how-it-works .container > header {
+  text-align: center;
+}
+
+
+.how-it-works {
+  background: #F5F5F5;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 1em;
+  font-size: 2.6em;
+  header {
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+  article {
+    margin-top: .5em;
+    &:last-child {
+      float: right;
+    }
+    ul li {
+      text-decoration: none;
+      list-style-type: none;
+      a {
+        font-size: 0.5em;
+        color: #000;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.advantages {
+  background-color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  header {
+    font-size: 2.3em;
+    text-align: center;
+  }
+  article {
+    width: 40%;
+    float: right;
+    &:nth-child(odd) {
+      float: left;
+    }
+    img {
+      max-width: 100%;
+      padding: 2em 0em;
+    }
+  }
+}
+
+.sign-up {
+  background-color: #F2F2F2;
+  padding-bottom: 5em;
+  header {
+    text-align: center;
+    font-size: 2.3em;
+  }
+  article {
+    background-color: #fff;
+    border-radius: 1em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    text-align: center;
+    padding-bottom: 3em;
+    -webkit-box-shadow: 4px 4px 4px #333;
+    -moz-box-shadow: 4px 4px 4px #333;
+    box-shadow: 4px 4px 4px #333;
+    header {
+      text-align: center;
+      padding-bottom: 2em;
+    }
+    button {
+      padding: 1.2em 2em;
+    }
+  }
+}

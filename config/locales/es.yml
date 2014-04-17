@@ -1,0 +1,18 @@
+es:
+  navbar:
+    search_routes: Buscar rutas
+    share_vehicle: Compartir vehículo
+    log_in: Iniciar sesión
+    new_user: Nuevo usuario
+    profile: Perfil
+    log_out: Cerrar sesión
+
+  footer:
+    contact: Contacto
+    terms_of_use: Términos de uso
+    data_protection: Protección de datos
+
+  landing:
+    how_it_works: Cómo funciona
+    advantages: Ventajas
+    enroll: Únete

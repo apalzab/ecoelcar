@@ -6,6 +6,11 @@ gem 'rails', '4.0.4'
 # Use pg as the database for Active Record
 gem 'pg'
 
+# Use devise for user management
+gem 'devise'
+
+gem 'rake', '~> 10.3.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 

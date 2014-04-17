@@ -1,0 +1,129 @@
+// Footer and page-wrap
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -105px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+  height: 105px; 
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  header {
+    padding: 1em;
+  }
+  a {
+    color: #fff;
+    &:hover {
+    text-decoration: none;
+    color: #77c8cf;
+    }
+  }
+  ul li {
+    display: inline;
+    list-style-type: none;
+  }
+}
+
+/* nav bar */
+
+.navbar {
+  background-color: #333;
+}
+
+.navbar-header {
+  margin-left: 2em;
+}
+
+.navbar-collapse .navbar-nav.navbar-right:last-child {
+  margin-right: 2em;
+  text-align: center;
+}
+
+.navbar-default .navbar-toggle {
+  border: none;
+  &:hover {
+    background: none;
+  }
+}
+
+.dropdown.open {
+  background-color: #333;
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-brand, .dropdown,
+.header ul li,
+footer a {
+  -webkit-transition: color .3s ease-in-out;
+  -moz-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #77c8cf;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #77c8cf;
+  background-color: transparent;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #77c8cf;
+}
+
+// Buttons
+.btn-blue {
+  background-color: #77c8cf;
+  border-color: #77c8cf;
+  opacity: .8;
+  color: white;
+  &:hover {
+    opacity: 1;
+    color: white;
+  }
+}
+
+// Fonts
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url("Open_Sans/OpenSans-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url("Open_Sans/OpenSans-Bold.ttf") format("truetype");
+}
+
+.bold {
+  font-family: 'OpenSans-Bold';
+}
+
+html,
+body, h1, h2, h3, h4 {
+  font-family: 'OpenSans-Light';
+}

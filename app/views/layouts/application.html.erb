@@ -8,8 +8,12 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="page-wrap">
+    <%= render 'shared/navbar' %>
+    <%= yield %>
+  </div> <!--wrap-->
 
-<%= render 'shared/footer' %>
+  <%= render 'shared/footer' %>
+
 </body>
 </html>
