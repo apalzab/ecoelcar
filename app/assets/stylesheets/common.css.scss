@@ -48,6 +48,19 @@ footer {
   margin-left: 2em;
 }
 
+.navbar-default {
+  border-color: none;
+}
+
+.navbar-default .navbar-collapse {
+  padding: .4em;
+}
+
+.navbar-brand {
+  font-size: 26px;
+  line-height: 26px;
+}
+
 .navbar-collapse .navbar-nav.navbar-right:last-child {
   margin-right: 2em;
   text-align: center;
@@ -131,7 +144,7 @@ body, h1, h2, h3, h4 {
 // Flash notifications
 
 .notice {
-  margin-top: 4em;
+  margin-top: 6em;
   margin-right: 1em;
   position: fixed;
   background: #77c8cf;
