@@ -9,6 +9,9 @@
 <body>
 
   <div class="page-wrap">
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
     <%= render 'shared/navbar' %>
     <%= yield %>
   </div> <!--wrap-->
