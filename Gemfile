@@ -11,6 +11,9 @@ gem 'devise'
 
 gem 'rake', '~> 10.3.0'
 
+# Use new relic
+gem 'newrelic_rpm'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
