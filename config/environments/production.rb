@@ -82,5 +82,4 @@ Ecoelcar::Application.configure do
 
   config.assets.precompile = ['*.js', '*.css', '*.css.erb']
 
-
 end

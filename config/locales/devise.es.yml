@@ -43,6 +43,9 @@ es:
       update_needs_confirmation: "Actualizaste tu cuenta correctamente, sin embargo necesitamos verificar tu nueva cuenta de correo. Por favor revisa tu correo electrónico y visita el enlace para finalizar la confirmación de tu nueva dirección de correo electrónico."
       updated: "Has actualizado tu cuenta correctamente."
     sessions:
+      sign_in: Iniciar sesión
+      sign_out: Cerrar sesión
+      forgot_password: ¿Has olvidado tu contraseña?
       signed_in: "Has iniciado sesión satisfactoriamente."
       signed_out: "Has cerrado la sesión satisfactoriamente."
     unlocks:

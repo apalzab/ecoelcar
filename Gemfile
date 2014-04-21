@@ -20,6 +20,9 @@ gem 'sass-rails', '~> 4.0.2'
 # Use Bootsrap framework
 gem 'bootstrap3-rails'
 
+# Keeping private stuff...private
+gem "figaro"
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
