@@ -21,6 +21,8 @@ es:
     mailer:
       confirmation_instructions:
         subject: "Instrucciones de confirmación"
+        welcome: 'Bienvenido a EcoElcar'
+        confirm: 'Por favor, confirma tu cuenta haciendo click en el siguiente enlace'
       reset_password_instructions:
         subject: "Instrucciones para restablecer tu contraseña"
       unlock_instructions:
