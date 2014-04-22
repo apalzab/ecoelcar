@@ -114,12 +114,12 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h1 class="modal-title">¡Regístrate!</h1>
       </div>
-      <%= form_for(:user, :url => session_path(:user), :html => {:class => 'modal-body'} ) do |f| %>
+      <%= form_for(:user, :as => :user, :url => registration_path(:user), :html => {:class => 'modal-body'}) do |f| %>
         <ul>
           <li><%= email_field("user", "email", :placeholder => "email@example.com", class: "form-control") %></li>
-          <li><%= f.password_field("password", :placeholder => "password", class: "form-control") %></li>
+          <li><%= f.password_field :password, :placeholder => "password", autocomplete: "off", class: "form-control" %></li>
+          <li><%= f.password_field :password_confirmation, autocomplete: "off",  class: "form-control" %></li>
           <li class="cl-effect-7"><%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary form-control' %></li>
-          <!-- <li><%= f.label :remember_me %><%= f.check_box :remember_me %></li> -->
           <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(:user) %></li>
       </ul>
     <% end %>
