@@ -27,15 +27,16 @@ Ecoelcar::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-config.action_mailer.raise_delivery_errors = true
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-config.action_mailer.smtp_settings = {
-      :address => "email-smtp.eu-west-1.amazonaws.com",
-      :user_name => ENV["aws_ses_user_name"],# Your SMTP user here.
-      :password => ENV["aws_ses_password"], # Your SMTP password here.
-      :authentication => :login,
-      :enable_starttls_auto => true
+  # Configuration for email sending with aws-ses
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.smtp_settings = {
+    :address => "email-smtp.eu-west-1.amazonaws.com",
+    :user_name => ENV["aws_ses_user_name"],
+    :password => ENV["aws_ses_password"],
+    :authentication => :login,
+    :enable_starttls_auto => true
   }
 
 end
