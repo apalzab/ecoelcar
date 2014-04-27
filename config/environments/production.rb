@@ -82,13 +82,7 @@ Ecoelcar::Application.configure do
 
   config.assets.precompile = ['*.js', '*.css', '*.css.erb']
 
+  config.action_mailer.delivery_method = :ses
   config.action_mailer.default_url_options = {:host => 'ecoelcar.herokuapp.com', :protocol => 'http'}
-  config.action_mailer.smtp_settings = {
-      :address => "email-smtp.eu-west-1.amazonaws.com",
-      :user_name => ENV["aws_ses_user_name"],
-      :password => ENV["aws_ses_password"],
-      :authentication => :login,
-      :enable_starttls_auto => true
-  }
 
 end
