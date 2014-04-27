@@ -20,6 +20,9 @@ gem 'sass-rails', '~> 4.0.2'
 # Use Bootsrap framework
 gem 'bootstrap3-rails'
 
+# Use aws-ses for email delivery
+gem "aws-ses", "~> 0.5.0", :require => 'aws/ses'
+
 # Keeping private stuff...private
 gem "figaro"
 
