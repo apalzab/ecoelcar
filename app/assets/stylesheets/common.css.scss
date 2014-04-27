@@ -1,3 +1,7 @@
+// Colors
+$light-blue: #77c8cf;
+
+
 // Footer and page-wrap
 * {
   margin: 0;
@@ -44,6 +48,10 @@ footer {
   background-color: #333;
 }
 
+.nav.navbar-nav li a {
+  // top: .4em;
+}
+
 .navbar-header {
   margin-left: 2em;
 }
@@ -53,7 +61,7 @@ footer {
 }
 
 .navbar-default .navbar-collapse {
-  padding: .4em;
+  // padding: .4em;
 }
 
 .navbar-brand {
@@ -101,10 +109,37 @@ footer a {
   background-color: transparent;
 }
 
+.dropdown-menu > li:hover, .dropdown-menu > li:focus {
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #77c8cf;
+  margin: 0;
+  background: $light-blue;
+}
+
+.dropdown-menu {
+  padding: 0;
+  .divider {
+    margin: 0;
+  }
+  li {
+    a {
+    padding: .7em;
+    }
+  }
+}
+
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   color: #ffffff;
   cursor: pointer;
   background-color: #77c8cf;
+  margin: 0;
+  background: $light-blue;
+}
+
+.dropdown.open {
+  background-color: #333;
+  color: #fff;
 }
 
 // Buttons
