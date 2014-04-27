@@ -99,6 +99,11 @@ footer a {
   color: white;
 }
 
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+color: $light-blue;
+background-color: #333;
+}
+
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #77c8cf;
   background-color: transparent;
