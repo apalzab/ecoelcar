@@ -116,11 +116,15 @@
       </div>
       <%= form_for(:user, :as => :user, :url => registration_path(:user), :html => {:class => 'modal-body'}) do |f| %>
         <ul>
-          <li><%= email_field("user", "email", :placeholder => "email@example.com", class: "form-control") %></li>
-          <li><%= f.password_field :password, :placeholder => "password", autocomplete: "off", class: "form-control" %></li>
-          <li><%= f.password_field :password_confirmation, autocomplete: "off",  class: "form-control" %></li>
-          <li class="cl-effect-7"><%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary form-control' %></li>
-          <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(:user) %></li>
+          <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com", class: "form-control", :required => true) %></li>
+          <li><%= f.password_field :password, :placeholder => "contraseña", autocomplete: "off", class: "form-control", :required => true %></li>
+          <li><%= f.password_field :password_confirmation, :placeholder => "contraseña", autocomplete: "off",  class: "form-control", :required => true %></li>
+          <div class="modal-footer">
+            <li>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              <%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary' %>
+            </li>
+            <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(:user) %></li>
         </ul>
       <% end %>
     </div><!-- /.modal-content -->
@@ -145,7 +149,7 @@
 </div><!-- /.modal -->
 
  <!-- modal login -->
-<div class="modal fade login" role="dialog" aria-hidden="true">
+<div class="modal fade login noscrollbar" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -154,10 +158,15 @@
       </div>
       <%= form_for(:user, :url => session_path(:user), :html => {:class => 'modal-body'}) do |f| %>
         <ul>
-          <li><%= email_field("user", "email", :placeholder => "email@example.com", class: "form-control") %></li>
-          <li><%= f.password_field :password, :placeholder => "password", autocomplete: "off", class: "form-control" %></li>
-          <li class="cl-effect-7"><%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary form-control' %></li>
-          <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(:user) %></li>
+          <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com", class: "form-control", :required => true) %></li>
+          <li><%= f.password_field :password, :placeholder => "contraseña", autocomplete: "off", class: "form-control", :required => true %></li>
+          <div class="modal-footer">
+            <li>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              <%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary' %>
+            </li>
+            <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(:user) %></li>
+          </div>
         </ul>
       <% end %>
     </div><!-- /.modal-content -->

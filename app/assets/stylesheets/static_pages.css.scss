@@ -143,6 +143,13 @@
   width: 35em;
 }
 
+body.modal-open,
+.modal-open .navbar-fixed-top,
+.modal-open .navbar-fixed-bottom {
+  margin-right: 15px;
+}
+/* custom class to override .modal-open */
+
 .modal label, select option, input[type="number"] {
   display: block;
   margin-bottom: 5px;
