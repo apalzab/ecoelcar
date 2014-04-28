@@ -1,4 +1,7 @@
 es:
+  routes:
+    paths: rutas
+    new: nueva
   navbar:
     search_routes: 'Buscar rutas'
     share_vehicle: 'Compartir vehículo'
