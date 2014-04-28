@@ -56,13 +56,13 @@
     <row class="row">
       <article>
         <header>
-          <%= image_tag("landing/graph.png", alt: "Eficient") %>
+          <%= image_tag("landing/graph.png", alt: "Eficiente") %>
           <h2>Eficiente</h2>
          </header>
       </article>
       <article>
         <header>
-          <%= image_tag("landing/trees.png", alt: "Ecologic") %>
+          <%= image_tag("landing/trees.png", alt: "Ecológico") %>
           <h2>Ecológico</h2>
          </header>
       </article>
@@ -70,13 +70,13 @@
     <row class="row">
       <article>
         <header>
-          <%= image_tag("landing/silent.png", alt: "Silent") %>
+          <%= image_tag("landing/silent.png", alt: "Silencioso") %>
           <h2>Silencioso</h2>
          </header>
       </article>
       <article>
         <header>
-          <%= image_tag("landing/pig.png", alt: "Economic") %>
+          <%= image_tag("landing/pig.png", alt: "Económico") %>
           <h2>Económico</h2>
          </header>
       </article>
@@ -121,23 +121,8 @@
           <li><%= f.password_field :password_confirmation, autocomplete: "off",  class: "form-control" %></li>
           <li class="cl-effect-7"><%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary form-control' %></li>
           <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(:user) %></li>
-      </ul>
-    <% end %>
-        <!-- <form class="modal-body">
-          
-          <ul>
-          <li><label>Nombre</label><input class="form-control" type="text" autofocus="" required=""></li>
-          <li><label>Apellidos</label><input class="form-control" type="text" required=""></li>
-          <li><label>E-mail</label><input class="form-control" type="email" required=""></li>
-          <li><label>Contraseña</label><input class="form-control" type="password" required=""></li>
-          <li style="display:none;"><label>Repite la contraseña</label><input class="form-control" type="password" required=""></i>
-          </li>
         </ul>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        <button id="create-user" type="button submit  " class="btn btn-primary">Crear usuario</button>
-      </div>
-        </form> -->
+      <% end %>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -167,17 +152,14 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h1 class="modal-title">Inicio de sesión</h1>
       </div>
-        <form class="modal-body">
-          <ul>
-            <li><label>Nombre de usuario</label><input class="form-control" type="email" required autofocus></li>
-            <li><label>Contraseña</label><input class="form-control" type="password" required></li>
+      <%= form_for(:user, :url => session_path(:user), :html => {:class => 'modal-body'}) do |f| %>
+        <ul>
+          <li><%= email_field("user", "email", :placeholder => "email@example.com", class: "form-control") %></li>
+          <li><%= f.password_field :password, :placeholder => "password", autocomplete: "off", class: "form-control" %></li>
+          <li class="cl-effect-7"><%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary form-control' %></li>
+          <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(:user) %></li>
         </ul>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-            <button id="login-modal" type="button submit" class="btn btn-primary">Iniciar sesión</button>
-        </div>
-        </form>
-
+      <% end %>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
