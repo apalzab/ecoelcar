@@ -21,4 +21,8 @@ $(document).ready(function() {
       $('.login').modal('show');
   });
 
+   setTimeout(function(){
+      $(".notice").hide("slow");
+   }, 7000);
+
 });
