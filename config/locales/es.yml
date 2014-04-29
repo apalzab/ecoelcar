@@ -19,3 +19,7 @@ es:
     how_it_works: 'Cómo funciona'
     advantages: 'Ventajas'
     enroll: 'Únete'
+
+  profile:
+    attributes:
+      no_data: 'Sin datos disponibles'
