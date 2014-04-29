@@ -1,5 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-
   def create
     build_resource(sign_up_params)
     resource_saved = resource.save
@@ -16,7 +15,6 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      # respond_with resource
       errors = []
       resource.errors.messages.map {|k, v|
         errors << v.to_sentence
@@ -25,6 +23,4 @@ class RegistrationsController < Devise::RegistrationsController
       redirect_to new_registration_path(resource)
     end
   end
-
-
 end
