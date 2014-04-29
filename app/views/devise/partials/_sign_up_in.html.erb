@@ -6,7 +6,7 @@
             <ul>
                 <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com") %></li>
                 <li><%= f.password_field("password", :placeholder => "contraseña") %></li>
-                <li><%= f.submit I18n.t("devise.sessions.new"), class: 'btn btn-primary' %></li>
+                <li><%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary' %></li>
                 <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(:user) %></li>
             </ul>
         <% end %>
@@ -17,7 +17,7 @@
             <ul>
               <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com") %></li>
               <li><%= f.password_field("password", :placeholder => "contraseña") %><%= f.password_field("password_confirmation", :placeholder => "repite la contraseña") %></li>
-              <li><%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary' %></li>
+              <li><%= f.submit I18n.t("devise.sessions.new"), class: 'btn btn-primary' %></li>
           </ul>
         <% end %>
     </article>

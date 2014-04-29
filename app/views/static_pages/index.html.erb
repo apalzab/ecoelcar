@@ -116,7 +116,7 @@
       </div>
       <%= form_for(:user, :as => :user, :url => registration_path(:user), :html => {:class => 'modal-body'}) do |f| %>
         <ul>
-          <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com", class: "form-control", :required => true) %></li>
+          <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com", class: "form-control", :required => true, :autofocus => true) %></li>
           <li><%= f.password_field :password, :placeholder => "contraseña", autocomplete: "off", class: "form-control", :required => true %></li>
           <li><%= f.password_field :password_confirmation, :placeholder => "contraseña", autocomplete: "off",  class: "form-control", :required => true %></li>
           <div class="modal-footer">
@@ -158,7 +158,7 @@
       </div>
       <%= form_for(:user, :url => session_path(:user), :html => {:class => 'modal-body'}) do |f| %>
         <ul>
-          <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com", class: "form-control", :required => true) %></li>
+          <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com", class: "form-control", :required => true, :autofocus => true) %></li>
           <li><%= f.password_field :password, :placeholder => "contraseña", autocomplete: "off", class: "form-control", :required => true %></li>
           <div class="modal-footer">
             <li>

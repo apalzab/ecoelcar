@@ -14,6 +14,11 @@
         <button type="button" class="close" data-dismiss="alert">×</button>
         <div><%= flash[:notice] %></div>
       </div>
+      <% elsif flash[:alert] %>
+        <div class="alert alert-dismissable alert-danger notice">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <div><%= flash[:alert] %></div>
+        </div>
     <% end %>
     <%= render 'shared/navbar' %>
     <%= yield %>

@@ -24,7 +24,7 @@
             <li><%= link_to I18n.t("navbar.log_out"), destroy_user_session_path, :method => :delete %></li>
           </ul>
         </li>
-      <% else %>
+      <% elsif current_page?(root_path) %>
         <li><a id="sign-in-nav" class="pointer"><%= I18n.t("navbar.new_user") %></a></li>
         <li><a id="login-nav" class="pointer"><%= I18n.t("navbar.log_in") %></a></li>
       <% end %>

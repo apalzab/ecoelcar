@@ -179,7 +179,7 @@ input[type="password"] {
 // Registrations: devise sign_in-up
 
 .registrations {
-  margin-top: 7em;
+  padding-top: 7em;
   article form ul {
     padding: 1em 0 0 0;
     list-style: none;
@@ -188,6 +188,7 @@ input[type="password"] {
         border: none;
         padding: 1em 0 1em 0;
         margin-bottom: 1em;
+        background: transparent;
         &:focus {
           outline: none;
         }
