@@ -1,0 +1,34 @@
+.profile-wrap{
+  background: #E5E5E5;
+  width: 100%;
+  padding-top: 7em;
+  header {
+    text-align: center;
+    padding-bottom: 4em;
+  }
+  .profile {
+    width: 80%;
+    margin: 0 auto;
+    header {
+      padding-left: .5em;
+      text-align: left;
+      padding-bottom: .4em;
+    }
+    .box {
+      width: 36%;
+      margin: 0 auto;
+      background: #fff;
+      border-top: 5px solid #fff;
+      font-size: 1em;
+      border-top-color: #77c8cf;
+      -webkit-box-shadow: 4px 4px 4px #333;
+      -moz-box-shadow: 4px 4px 4px #333;
+      box-shadow: 4px 4px 4px #333;
+      border-radius: 5px;
+      ul {
+        list-style: none;
+        padding-left: .5em;
+      }
+    }
+  }
+}
