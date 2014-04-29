@@ -34,8 +34,9 @@ es:
       no_token: "No puedes acceder a esta página sino es por medio de un enlace para restablecer contraseña. Si accediste desde el enlace para restablecer la contraseña, asegúrate de que la URL esté completa."
       send_instructions: "Recibirás un correo electrónico con instrucciones sobre cómo restablecer tu contraseña en unos minutos."
       send_paranoid_instructions: "Si tu correo electrónico existe en nuestra base de datos, recibirás un enlace para restablecer la contraseña en unos minutos."
-      updated: "Tu contraseña se cambió correctamente. Has sido identificado."
+      updated: "Has cambiado la contraseña y has iniciado sesión"
       updated_not_active: "Tu contraseña se cambió correctamente."
+      change: 'Cambiar de contraseña'
     registrations:
       destroyed: "¡Adiós! Tu cuenta ha sido cancelada. Esperamos volver a verte pronto."
       signed_up: "¡Bienvenido! Has sido identificado."
@@ -44,11 +45,12 @@ es:
       signed_up_but_unconfirmed: "Se te ha enviado un mensaje con un enlace de confirmación. Por favor visita el enlace para activar tu cuenta."
       update_needs_confirmation: "Actualizaste tu cuenta correctamente, sin embargo necesitamos verificar tu nueva cuenta de correo. Por favor revisa tu correo electrónico y visita el enlace para finalizar la confirmación de tu nueva dirección de correo electrónico."
       updated: "Has actualizado tu cuenta correctamente."
+      new: Registrar
     sessions:
       sign_in: Iniciar sesión
       sign_out: Cerrar sesión
-      new: Registrar
       forgot_password: ¿Has olvidado tu contraseña?
+      remember_password: 'Recordar contraseña'
       signed_in: "Has iniciado sesión"
       signed_out: "Has cerrado la sesión"
     unlocks:

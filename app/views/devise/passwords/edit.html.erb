@@ -1,16 +1,15 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div><%= f.label :password, "New password" %><br />
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %></div>
-
-  <div><%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Change my password" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<section class="registrations">
+  <article class="col-lg-4 col-lg-offset-2">
+    <header><h2>Cambia tu contraseña</h2></header>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.hidden_field :reset_password_token %>
+          <ul>
+              <li><%= f.password_field("password", :placeholder => "contraseña") %><%= f.password_field("password_confirmation", :placeholder => "repite la contraseña") %></li>
+              <li><%= f.submit I18n.t("devise.passwords.change"), class: 'btn btn-primary' %></li>
+              <li><%= link_to I18n.t("devise.sessions.sign_in"), new_user_session_path %></li>
+              <li><%= link_to I18n.t("devise.registrations.new"), new_user_registration_path %></li>
+          </ul>
+      <%= devise_error_messages! %>
+      <% end %>
+  </article>
+</section>
