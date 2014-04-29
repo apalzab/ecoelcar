@@ -1,0 +1,23 @@
+es:
+  activerecord:
+    models:
+      user:
+        one: usuario
+        other: usuarios
+
+      attributes:
+        user:
+          password: 'contraseña'
+          password_confirmation: 'contraseña'
+          email: 'emilio'
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: 'El email ya está en uso'
+            password:
+              blank: 'La contraseña no puede estar en blanco'
+              too_short: 'La contraseña es demasiado corta'
+            password_confirmation:
+              confirmation: 'Introduce la misma contraseña en los dos campos'

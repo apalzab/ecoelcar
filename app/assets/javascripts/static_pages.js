@@ -25,7 +25,7 @@ ready = function() {
   setTimeout(function() {
       $(".notice").hide("slow");
       console.log('executed');
-  }, 7000);
+  }, 5000);
 
 };
 
