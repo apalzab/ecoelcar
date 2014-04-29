@@ -8,6 +8,7 @@ Ecoelcar::Application.routes.draw do
 
   localized do
     resources :paths
+    resources :users
   end
 
 

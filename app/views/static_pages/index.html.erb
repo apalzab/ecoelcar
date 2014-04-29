@@ -93,7 +93,7 @@
           <h3>Listos</h3>
           <h3>ReadyToCharge&Go</h3>
         </header>
-        <button id="sign-in-bottom" type="button" class="btn btn-blue">CREAR UNA CUENTA</button>
+        <button id="sign-up-bottom" type="button" class="btn btn-blue">CREAR UNA CUENTA</button>
     </article>
     <article class="col-lg-3 col-lg-offset-2">
         <header>
@@ -122,7 +122,7 @@
           <div class="modal-footer">
             <li>
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary' %>
+              <%= f.submit I18n.t("devise.sessions.new"), class: 'btn btn-primary' %>
             </li>
             <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(:user) %></li>
         </ul>

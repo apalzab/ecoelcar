@@ -47,9 +47,10 @@ es:
     sessions:
       sign_in: Iniciar sesión
       sign_out: Cerrar sesión
+      new: Registrar
       forgot_password: ¿Has olvidado tu contraseña?
-      signed_in: "Has iniciado sesión satisfactoriamente."
-      signed_out: "Has cerrado la sesión satisfactoriamente."
+      signed_in: "Has iniciado sesión"
+      signed_out: "Has cerrado la sesión"
     unlocks:
       send_instructions: "Recibirás un correo electrónico en unos minutos con instrucciones sobre cómo desbloquear tu cuenta."
       send_paranoid_instructions: "Si tu cuenta existe, recibirás un correo electrónico en unos minutos con instrucciones sobre cómo desbloquear tu cuenta."

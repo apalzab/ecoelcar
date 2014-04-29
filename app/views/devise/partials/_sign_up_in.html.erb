@@ -1,0 +1,25 @@
+<section class="registrations">
+  <row class="row">
+    <article class="col-lg-4 col-lg-offset-2">
+      <header><h2>Inicia Sesión</h2></header>
+        <%= form_for(:user, :url => session_path(:user)) do |f| %>
+            <ul>
+                <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com") %></li>
+                <li><%= f.password_field("password", :placeholder => "contraseña") %></li>
+                <li><%= f.submit I18n.t("devise.sessions.new"), class: 'btn btn-primary' %></li>
+                <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(:user) %></li>
+            </ul>
+        <% end %>
+      </article>
+      <article class="col-lg-4 col-lg-offset-1">
+        <header><h2>Regístrate</h2></header>
+        <%= form_for(:user, :as => :user, :url => registration_path(:user)) do |f| %>
+            <ul>
+              <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com") %></li>
+              <li><%= f.password_field("password", :placeholder => "contraseña") %><%= f.password_field("password_confirmation", :placeholder => "repite la contraseña") %></li>
+              <li><%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary' %></li>
+          </ul>
+        <% end %>
+    </article>
+  </row>
+</section>

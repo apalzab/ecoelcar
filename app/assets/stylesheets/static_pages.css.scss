@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'common';
+
 .header {
   padding-top: 6em;
   color: #fff;
@@ -172,4 +174,30 @@ input[type="password"] {
 
 .modal form ul {
   padding-left: 0;
+}
+
+// Registrations: devise sign_in-up
+
+.registrations {
+  margin-top: 7em;
+  article form ul {
+    padding: 1em 0 0 0;
+    list-style: none;
+    li {
+      input[type="email"], input[type="password"] {
+        border: none;
+        padding: 1em 0 1em 0;
+        margin-bottom: 1em;
+        &:focus {
+          outline: none;
+        }
+      }
+      .btn {
+        margin-bottom: 1em;
+      }
+      a {
+        color: $dark-blue;
+      }
+    }
+  }
 }

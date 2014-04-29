@@ -1,5 +1,6 @@
 // Colors
 $light-blue: #77c8cf;
+$dark-blue: #2c3e50;
 
 
 // Footer and page-wrap
@@ -172,8 +173,8 @@ background-color: #333;
 
 .btn-primary {
   color: #ffffff;
-  background-color: #2c3e50;
-  border-color: #2c3e50;
+  background-color: $dark-blue;
+  border-color: $dark-blue;
 }
 
 .btn-default {

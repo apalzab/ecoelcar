@@ -9,7 +9,7 @@ $(document).ready(function() {
       $('.new-user').modal('show');
   });
 
-  $('#sign-in-bottom').click(function() {
+  $('#sign-up-bottom').click(function() {
       $('.new-user').modal('show');
   });
 
@@ -23,6 +23,7 @@ $(document).ready(function() {
 
    setTimeout(function(){
       $(".notice").hide("slow");
+      console.log('executed');
    }, 7000);
 
 });
