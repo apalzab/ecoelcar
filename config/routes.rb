@@ -1,6 +1,6 @@
 Ecoelcar::Application.routes.draw do
-  # devise_for :users
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users
+  # devise_for :users, :controllers => {:registrations => "registrations"}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -9,8 +9,10 @@ Ecoelcar::Application.routes.draw do
 
   localized do
     resources :paths
-    resources :users
+    resources :users, only: [:show]
   end
+
+  match "/404", :to => "errors#not_found"
 
 
   # Example of regular route:

@@ -1,1 +1,13 @@
-<%= render "devise/partials/sign_up_in" %>
+<section class="registrations">
+  <article class="col-lg-4 col-lg-offset-1">
+    <header><h2>Regístrate</h2></header>
+    <%= form_for(:user, :as => :user, :url => registration_path(:user)) do |f| %>
+    <%= devise_error_messages! %>
+        <ul>
+          <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com") %></li>
+          <li><%= f.password_field("password", :placeholder => "contraseña") %><%= f.password_field("password_confirmation", :placeholder => "repite la contraseña") %></li>
+          <li><%= f.submit I18n.t("devise.registrations.new"), class: 'btn btn-primary' %></li>
+      </ul>
+    <% end %>
+  </article>
+</section>

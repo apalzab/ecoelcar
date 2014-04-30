@@ -1,1 +1,13 @@
-<%= render "devise/partials/sign_up_in" %>
+<section class="registrations">
+  <article class="col-lg-4 col-lg-offset-2">
+    <header><h2>Inicia Sesión</h2></header>
+      <%= form_for(:user, :url => session_path(:user)) do |f| %>
+          <ul>
+              <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com") %></li>
+              <li><%= f.password_field("password", :placeholder => "contraseña") %></li>
+              <li><%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary' %></li>
+              <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(resource_name) %></li>
+          </ul>
+      <% end %>
+    </article>
+</section>
