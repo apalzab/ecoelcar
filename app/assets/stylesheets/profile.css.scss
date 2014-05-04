@@ -6,6 +6,14 @@
     width: 50%;
     margin: 0 auto;
     .panel {
+      input, textarea {
+        border: none;
+        border: 1px solid #ecf0f1;
+        width: 100%;
+        &:focus {
+          outline: none;
+        }
+      }
       .panel-title {
         font-size: 1.5em;
       }
@@ -14,14 +22,58 @@
           padding-left: 0;
           list-style: none;
         }
+        .personal-info {
+          .modify {
+            float: right;
+            li {
+              list-style-type: none;
+            }
+          }
+          hr {
+            clear: both;
+            margin-top: 17em;
+          }
+          .basic {
+            padding: 1em 0 1em 0;
+            .image {
+              width: 30%;
+              float: left;
+              img {
+                max-width: 100%;
+                // border: 1px solid black;
+                box-shadow: 1px 1px 1px #333;
+                border-radius: 5px;
+              }
+            }
+            .bio {
+              width: 50%;
+              float: right;
+              ul {
+                margin: 0;
+              }
+            }
+          }
+          .extra {
+            clear: both;
+          }
+        }
         .car-info {
-          ul {
+          .info {
             float: left;
             width: 50%;
-
+            li {
+              span {
+                font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                  font-weight: 400;
+                  line-height: 1.1;
+                  color: inherit;
+              }
+            }
           }
           img {
             max-width: 50%;
+            border-radius: 5px;
+            box-shadow: 1px 1px 1px #333;
           }
         }
       }

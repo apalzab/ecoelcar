@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
     if @user.update_attributes user_params
       redirect_to @user
     else
@@ -27,6 +26,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :last_name, vehicles_attributes: [:brand, :model, :id, :photo])
+    params.require(:user).permit(:name, :last_name, :photo, :drive_license_old, :hobbies, :description, :ocupation,
+                                 vehicles_attributes: [:brand, :model, :id, :seats, :horse_power, :year_of_registration, :photo])
   end
 end
