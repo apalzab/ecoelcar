@@ -21,7 +21,7 @@
                   <li><%= f.input :name, :label => false %>
                   <li><h5>Apellidos</h5></li>
                   <li><%= f.input :last_name, :label => false %></li>
-                  <li><h5>Antigüedad del carnet de conducir</h5></li>
+                  <li><h5>Años de experiencia</h5></li>
                   <li><%= f.input :drive_license_old, :label => false, :input_html => { :paceholder => 'años' } %></li>
                   <li><h5>Profesión</h5></li>
                   <li><%= f.input :ocupation, :label => false %></li>
@@ -31,10 +31,10 @@
             <hr>
             <div class="extra">
               <ul>
-                <li><h5>Hobbies</h5></li>
+                <li><h5>Aficiones</h5></li>
                 <li><%= f.input :hobbies, :label => false %></li>
                 <li><h5>Descripción</h5></li>
-                <li><%= f.input :description, :label => false, :input_html => { :rows => '7' } %></li>
+                <li><%= f.input :description, :label => false, :input_html => { :rows => '8' } %></li>
               </ul>
             </div>
           </article>
@@ -43,27 +43,33 @@
         <div class="panel-body">
           <article class="car-info">
             <strong><h4>Mi Coche</h4></strong>
-            <div class="info">
-              <% if current_user.vehicles.count == 0 %>
-                <%= f.add_nested_fields_link :vehicles %>
-              <% end %>
-              <%= f.nested_fields_for :vehicles do |builder| %>
-                <ul>
-                  <li><h5>Marca:</h5></li>
-                  <%= builder.input :brand, :label => false %>
-                  <li>Modelo</li>
-                  <li><%= builder.input :model, :label => false %></li>
-                  <li><h5>Número de plazas: </h5></li>
-                  <li><%= builder.input :seats, :label => false %></li>
-                  <li><h5>Caballos:</h5></li>
-                  <li><li><%= builder.input :horse_power, :label => false %></li></li>
-                  <li><h5>Año de matriculación:</h5></li>
-                  <li><%= builder.input :year_of_registration, :label => false %></li>
-                </ul>
-              <% end %>
-            </div>
-            <%= image_tag current_user.vehicles.first.photo.url if current_user.vehicles.first %>
-          </article>
+            <%= f.nested_fields_for :vehicles do |builder| %>
+              <div class="info">
+                <% if current_user.vehicles.count == 0 %>
+                  <%= f.add_nested_fields_link :vehicles %>
+                <% end %>
+                  <ul>
+                    <li><h5>Marca:</h5></li>
+                    <%= builder.input :brand, :label => false %>
+                    <li><h5>Modelo</h5></li>
+                    <li><%= builder.input :model, :label => false %></li>
+                    <li><h5>Número de plazas: </h5></li>
+                    <li><%= builder.input :seats, :label => false %></li>
+                    <li><h5>Caballos:</h5></li>
+                    <li><li><%= builder.input :horse_power, :label => false %></li></li>
+                    <li><h5>Año de matriculación:</h5></li>
+                    <li><%= builder.input :year_of_registration, :label => false %></li>
+                  </ul>
+              </div>
+              <div class="image">
+                <% if current_user.vehicles.first %>
+                  <%= image_tag current_user.vehicles.first.photo.url %>
+                <% end %>
+                <%= builder.input :photo, :as => :file, :input_html => { :value => 'Subir foto' } %>
+              </div>
+            </article>
+            <%= f.action :submit, :button_html => { :class => "btn btn-primary", :disable_with => 'Guardando...', :value => 'Guardar cambios' } %>
+          <% end %>
         </div>
       </div>
     <% end %>

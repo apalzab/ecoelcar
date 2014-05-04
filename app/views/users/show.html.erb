@@ -18,17 +18,15 @@
                 <li><%= current_user.email || I18n.t('profile.attributes.no_data') %></li>
                 <li><h5>Nombre y Apellidos</h5></li>
                 <li><%= current_user.name || I18n.t('profile.attributes.no_data') %> <%= current_user.last_name || I18n.t('profile.attributes.no_data') %></li>
-                <li><h5>Antigüedad del carnet de conducir</h5></li>
-                <li><%= current_user.drive_license_old || I18n.t('profile.attributes.no_data') %></li>
-                <li><h5>Profesión</h5></li>
-                <li><%= current_user.ocupation || I18n.t('profile.attributes.no_data') %></li>
+                <li><span>Años de experiencia: </span><%= current_user.drive_license_old %></li>
+                <li><span>Profesión: </span><%= current_user.ocupation %></li>
               </ul>
             </div>
           </div>
           <hr>
           <div class="extra">
             <ul>
-              <li><h5>Hobbies</h5></li>
+              <li><h5>Aficiones</h5></li>
               <li><%= current_user.hobbies || I18n.t('profile.attributes.no_data') %></li>
               <li><h5>Descripción</h5></li>
               <li><%= current_user.description || I18n.t('profile.attributes.no_data') %></li>
