@@ -25,6 +25,10 @@
 #  profesion              :string(255)
 #  hobbies                :string(255)
 #  description            :text
+#  photo_file_name        :string(255)
+#  photo_content_type     :string(255)
+#  photo_file_size        :integer
+#  photo_updated_at       :datetime
 #
 
 class User < ActiveRecord::Base
@@ -32,7 +36,10 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
-  
+
+  has_attached_file :photo
+  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+
   has_many :vehicles
   accepts_nested_attributes_for :vehicles
 end
