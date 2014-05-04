@@ -92,7 +92,11 @@ Ecoelcar::Application.configure do
       :bucket => ENV['aws_s3_bucket_name'],
       :access_key_id => ENV['aws_ses_access_key'],
       :secret_access_key => ENV['aws_ses_secret_access_key']
-    }
+    },
+  :path => "/:style/:id/:filename",
+  :url  => ":s3_eu_url"
   }
+
+  AWS::S3::DEFAULT_HOST = "s3-eu-west-1.amazonaws.com"
 
 end
