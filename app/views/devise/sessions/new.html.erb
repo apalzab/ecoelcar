@@ -5,7 +5,7 @@
           <ul>
               <li><%= email_field("user", "email", :placeholder => "ejemplo@gmail.com") %></li>
               <li><%= f.password_field("password", :placeholder => "contraseña") %></li>
-              <li><%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary' %></li>
+              <li><%= f.submit I18n.t("devise.sessions.sign_in"), class: 'btn btn-primary', data: { disable_with: "Iniciando..." } %></li>
               <li><%= link_to I18n.t("devise.sessions.forgot_password"), new_password_path(resource_name) %></li>
           </ul>
       <% end %>

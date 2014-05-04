@@ -6,7 +6,7 @@
       <%= devise_error_messages! %>
           <ul>
               <li><%= f.password_field("password", :placeholder => "contraseña") %><%= f.password_field("password_confirmation", :placeholder => "repite la contraseña") %></li>
-              <li><%= f.submit I18n.t("devise.passwords.change"), class: 'btn btn-primary' %></li>
+              <li><%= f.submit I18n.t("devise.passwords.change"), class: 'btn btn-primary', data: { disable_with: "Enviando..." } %></li>
               <li><%= link_to I18n.t("devise.sessions.sign_in"), new_user_session_path %></li>
               <li><%= link_to I18n.t("devise.registrations.new"), new_user_registration_path %></li>
           </ul>

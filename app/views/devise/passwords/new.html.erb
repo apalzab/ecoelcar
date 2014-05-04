@@ -4,7 +4,7 @@
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
           <ul>
               <li><%= f.email_field :email, :placeholder => "ejemplo@gmail.com",autofocus: true %></li>
-              <li><%= f.submit I18n.t("devise.sessions.remember_password"), class: 'btn btn-primary' %></li>
+              <li><%= f.submit I18n.t("devise.sessions.remember_password"), class: 'btn btn-primary', data: { disable_with: "Enviando..." } %></li>
               <li><%= link_to I18n.t("devise.sessions.sign_in"), new_user_session_path %></li>
               <li><%= link_to I18n.t("devise.registrations.new"), new_user_registration_path %></li>
           </ul>
