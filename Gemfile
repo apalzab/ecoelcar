@@ -16,6 +16,10 @@ gem 'newrelic_rpm'
 
 gem 'route_translator'
 
+gem 'formtastic'
+
+gem 'nested_form_fields'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -27,6 +31,10 @@ gem "aws-ses", "~> 0.5.0", :require => 'aws/ses'
 
 # Keeping private stuff...private
 gem "figaro"
+
+# For file uploading
+gem 'paperclip', '3.5'
+gem 'aws-sdk'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

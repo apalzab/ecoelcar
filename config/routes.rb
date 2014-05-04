@@ -9,11 +9,8 @@ Ecoelcar::Application.routes.draw do
 
   localized do
     resources :paths
-    resources :users, only: [:show]
+    resources :users, only: [:show, :edit, :update]
   end
-
-  match "/404", :to => "errors#not_found"
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

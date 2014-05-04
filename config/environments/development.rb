@@ -32,18 +32,33 @@ Ecoelcar::Application.configure do
   # config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-config.action_mailer.raise_delivery_errors = true
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.perform_deliveries = true 
-config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-config.action_mailer.smtp_settings = {
-:address => "smtp.gmail.com",
-:port => 587,
-:domain => "mail.google.com",
-:user_name => "squeezeitnoreply@gmail.com",
-:password => "www.password.com",
-:authentication => :plain,
-:enable_starttls_auto => true 
-}
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true 
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "mail.google.com",
+    :user_name => "squeezeitnoreply@gmail.com",
+    :password => "www.password.com",
+    :authentication => :plain,
+    :enable_starttls_auto => true 
+  }
+
+
+  # aws paperclip configuration
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['aws_s3_bucket_name'],
+      :access_key_id => ENV['aws_ses_access_key'],
+      :secret_access_key => ENV['aws_ses_secret_access_key']
+    },
+  :path => "/:style/:id/:filename",
+  :url  => ":s3_eu_url"
+  }
+
+  AWS::S3::DEFAULT_HOST = "s3-eu-west-1.amazonaws.com"
 
 end

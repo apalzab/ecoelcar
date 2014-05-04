@@ -85,4 +85,14 @@ Ecoelcar::Application.configure do
   config.action_mailer.delivery_method = :ses
   config.action_mailer.default_url_options = {:host => 'ecoelcar.herokuapp.com', :protocol => 'http'}
 
+  # aws paperclip configuration
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['aws_s3_bucket_name'],
+      :access_key_id => ENV['aws_ses_access_key'],
+      :secret_access_key => ENV['aws_ses_secret_access_key']
+    }
+  }
+
 end

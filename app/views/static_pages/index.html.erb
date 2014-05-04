@@ -14,15 +14,14 @@
 <section class="top">
   <div class="container">
     <article class="col-lg-5">
-      <%= image_tag("landing/charge.png", class: "img-responsive col-md-offset-3", alt: "ReadyToCharge") %>
-      <header><h1>Recarga</h1></header>
-      <p>Reserva a la hora que quieras y en la estación que mejor te venga una plaza para recargar tu vehículo eléctrico.</p>
-      
+      <%= image_tag "landing/charge.png", class: "img-responsive col-md-offset-3", alt: I18n.t("landing.top.share.header") %>
+      <header><h1><%= I18n.t("landing.top.share.header") %></h1></header>
+      <p><%= I18n.t("landing.top.share.description") %></p>
     </article>
     <article class="col-lg-5">
-      <%= image_tag("landing/go.png", class: "img-responsive col-md-offset-3", alt: "ReadyToGo") %>
-      <header><h1>Alquila</h1></header>
-      <p>Alquila un coche en una de nuestras estaciones, publica tu ruta si quieres y prepárate para ahorrar dinero.</p>
+      <%= image_tag "landing/go.png", class: "img-responsive col-md-offset-3", alt: I18n.t("landing.top.search_routes.header") %>
+      <header><h1><%= I18n.t("landing.top.search_routes.header") %></h1></header>
+      <p><%= I18n.t("landing.top.search_routes.description") %></p>
     </article>
   </div>
 </section>

@@ -1,0 +1,45 @@
+<div class="profile-wrap">
+  <header><h1>Configuración de perfil</h1></header>
+  <section class="profile">
+    <section class="basic-info box">
+      <header><h3>Información básica</h3></header>
+      <%= semantic_form_for current_user do |f| %>
+        <ul>
+          <li><h5>ID usuario | email</h5></li>
+          <li><%= current_user.email || I18n.t('profile.attributes.no_data') %></li>
+          <li><h5>Nombre</h5></li>
+          <li><%= f.input :name %></li>
+          <li><h5>Apellidos</h5></li>
+          <li><%= f.input :last_name %></li>
+          <li><h5>Antigüedad del carnet de conducir</h5></li>
+          <li><%= f.input :drive_license_old %></li>
+          <li><h5>Profesión</h5></li>
+          <li><%= f.input :profesion %></li>
+          <li><h5>Hobbies</h5></li>
+          <li><%= f.input :hobbies %></li>
+          <li><h5>Description</h5></li>
+          <li><%= f.input :description %></li>
+        </ul>
+
+        <% current_user.vehicles.each do |vehicle| %>
+          <%= f.nested_fields_for :vehicles do |builder| %>
+            <%= builder.input :brand %>
+            <%= builder.input :model %>
+            <%= builder.input :year_of_registration %>
+            <%= builder.input :horse_power %>
+            <%= builder.input :photo, :as => :file %>
+            <%= builder.remove_nested_fields_link %>
+          <% end %>
+            <%= f.add_nested_fields_link :vehicles %>
+        <% end %>
+        <%= f.actions %>
+      <% end %>
+
+    </section>
+
+    <section class="vehicles box">
+      <header><h3>Vehículos</h3></header>
+    </section>
+  </section>
+</div>
+
