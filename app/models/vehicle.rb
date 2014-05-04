@@ -24,5 +24,6 @@ class Vehicle < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   validates :brand, :model, :seats, presence: true
+  validates :seats, inclusion: { in: 1..5 }
 
 end
