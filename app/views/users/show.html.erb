@@ -47,7 +47,9 @@
               <li><span>Año de matriculación: </span><%= current_user.vehicles.first.year_of_registration || I18n.t('profile.attributes.no_data') %></li>
             </ul>
           </div>
-          <%= image_tag current_user.vehicles.first.photo.url %>
+          <div class="image">
+            <%= image_tag current_user.vehicles.first.photo.url %>
+          </div>
           <% else %>
             <%= I18n.t('profile.attributes.no_data') %>
           <% end %>
