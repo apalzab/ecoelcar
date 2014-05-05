@@ -12,6 +12,7 @@
             <div class="basic">
               <div class="image">
                 <%= image_tag current_user.photo.url %>
+                <%= f.input :photo, :as => :file %>
               </div>
               <div class="bio">
                 <ul>
@@ -65,7 +66,7 @@
                 <% if current_user.vehicles.first %>
                   <%= image_tag current_user.vehicles.first.photo.url %>
                 <% end %>
-                <%= builder.input :photo, :as => :file, :input_html => { :value => 'Subir foto' } %>
+                <%= builder.input :photo, :as => :file %>
               </div>
             </article>
             <%= f.action :submit, :button_html => { :class => "btn btn-primary", :disable_with => 'Guardando...', :value => 'Guardar cambios' } %>
