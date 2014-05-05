@@ -1,3 +1,36 @@
-<section>
-  <h1>This is the paths index view</h1>
-</section>
+<div class="paths-wrap">
+  <section class="routes">
+    <header><h1>Buscar Rutas</h1></header>
+    <div class="panel panel-primary search">
+      <div class="panel-heading">
+        <h1 class="panel-title col-md-9"><%= @paths.count %> Rutas publicadas</h1>
+        <div class="buttons">
+          <h5 class="col-md-1">Ordenar por</h5>
+          <%= link_to "Fecha", paths_path, class: 'btn btn-primary' %>
+          <%= link_to "Precio", paths_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+
+    <% @paths.each do |path| %>
+      <section class="route row">
+        <article class='col-md-3 profile'>
+          <div class="image">
+            <%= image_tag path.user.photo.url %>
+          </div>
+          <div class="description">
+            <p><span><%= path.user.name %></span></p>
+            <p><%= path.user.age %> años</p>
+            <p><%= path.user.ocupation %></p>
+          </div>
+        </article>
+        <article class='col-md-8 info'>
+          <h1>Route 1</h1>
+          <%= path.date %>
+        </article>
+      </section>
+      <hr>
+  <% end %>
+    </section>
+  
+</div>

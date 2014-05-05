@@ -18,6 +18,7 @@
                 <li><%= current_user.email || I18n.t('profile.attributes.no_data') %></li>
                 <li><h5>Nombre y Apellidos</h5></li>
                 <li><%= current_user.name || I18n.t('profile.attributes.no_data') %> <%= current_user.last_name || I18n.t('profile.attributes.no_data') %></li>
+                <li><span>Edad: </span><%= current_user.age %></li>
                 <li><span>Años de experiencia: </span><%= current_user.drive_license_old %></li>
                 <li><span>Profesión: </span><%= current_user.ocupation %></li>
               </ul>

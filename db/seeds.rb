@@ -26,3 +26,8 @@ stations = Station.create([
   { name: 'Las Arenas (calle Novia Salcedo)', latlng: '43.323585,-3.013523' },
   { name: 'Portugalete (calle General Castaños)', latlng: '43.322706,-3.025191' },
 ])
+
+
+paths = Path.create([
+  { user_id: 1, origin_station_id: 2, destination_station_id: 3, date: Time.now.tommorow },
+])
