@@ -22,7 +22,7 @@
 #  name                   :string(255)
 #  last_name              :string(255)
 #  drive_license_old      :integer
-#  profesion              :string(255)
+#  ocupation              :string(255)
 #  hobbies                :string(255)
 #  description            :text
 #  photo_file_name        :string(255)
@@ -41,5 +41,6 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   has_many :vehicles
+  has_many :paths
   accepts_nested_attributes_for :vehicles
 end

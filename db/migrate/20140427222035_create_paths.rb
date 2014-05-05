@@ -4,8 +4,8 @@ class CreatePaths < ActiveRecord::Migration
       t.belongs_to :user
       t.integer :origin_station_id
       t.integer :destination_station_id
-      t.date :date
-      t.text :latitudes_and_longitudes
+      t.datetime :datetime
+      t.string :route_spots
       t.timestamps
     end
   end

@@ -1,5 +1,7 @@
 <div class="paths-wrap">
   <section class="new-route">
+    <%= semantic_form_for :path, :url => paths_path do |f| %>
+
     <header><h1>Publica tu ruta</h1></header>
     <section class="route">
       <article class="type">
@@ -32,27 +34,9 @@
             </div>
             <div class="panel-body">
               <h5>Estación de origen</h5>
-              <select multiple="" class="form-control" id="origin">
-                <option data-latlng="43.271674,-2.939186">Bilbao, Deusto</option>
-                <option data-latlng="43.256076,-2.936454">Bilbao, Plaza de Toros</option>
-                <option data-latlng="43.255033,-2.943980">Bilbao, Ametzola (calle Gordoniz)</option>
-                <option data-latlng="43.261919,-2.911929">Bilbao, Begoña (calle Zabalbide)</option>
-                <option data-latlng="43.297350,-2.986217">Barakaldo (Herriko Plaza)</option>
-                <option data-latlng="43.341034,-3.003918">Getxo (calle Zarrenebarri)</option>
-                <option data-latlng="43.323585,-3.013523">Las Arenas (calle Novia Salcedo)</option>
-                <option data-latlng="43.322706,-3.025191">Portugalete (calle General Castaños)</option>
-              </select>
+              <%= f.select :origin_station_id, Station.all.collect {|x| [x.name, x.id, { 'data-latlng' => x.latlng }]}, {}, :multiple => true, :class => "form-control", :id => 'origin' %>
               <h5>Estación de destino</h5>
-              <select multiple="" class="form-control" id="destination">
-                <option data-latlng="43.271674,-2.939186">Bilbao, Deusto</option>
-                <option data-latlng="43.256076,-2.936454">Bilbao, Plaza de Toros</option>
-                <option data-latlng="43.255033,-2.943980">Bilbao, Ametzola (calle Gordoniz)</option>
-                <option data-latlng="43.261919,-2.911929">Bilbao, Begoña (calle Zabalbide)</option>
-                <option data-latlng="43.297350,-2.986217">Barakaldo (Herriko Plaza)</option>
-                <option data-latlng="43.341034,-3.003918">Getxo (calle Zarrenebarri)</option>
-                <option data-latlng="43.323585,-3.013523">Las Arenas (calle Novia Salcedo)</option>
-                <option data-latlng="43.322706,-3.025191">Portugalete (calle General Castaños)</option>
-              </select>
+              <%= f.select :destination_station_id, Station.all.collect {|x| [x.name, x.id, { 'data-latlng' => x.latlng }]}, {}, :multiple => true, :class => "form-control", :id => 'destination' %>
             </div>
           </div>
       </article>
@@ -63,10 +47,16 @@
               <h3 class="panel-title">Día y Hora</h3>
             </div>
             <div class="panel-body">
-              
+              <%= f.label :datetime, 'Fecha' %>
+              <%= f.date_field :datetime %>
+              <%= f.label :datetime, 'Hora' %>
+              <%= f.input :datetime, :as => :time_select, :label => false, :input_html => { :color => 'black' } %>
             </div>
           </div>
       </article>
+              <%= f.actions %>
+
+              <% end %>
 
     </section>
 
