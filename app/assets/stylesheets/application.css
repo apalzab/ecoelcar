@@ -11,5 +11,6 @@
  *= require_self
  *= require bootstrap
  *= require bootswatch
+ *= require font-awesome
  *= require_tree .
  */

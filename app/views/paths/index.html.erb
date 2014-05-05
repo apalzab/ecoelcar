@@ -19,14 +19,16 @@
             <%= image_tag path.user.photo.url %>
           </div>
           <div class="description">
-            <p><span><%= path.user.name %></span></p>
+            <p><span><%= link_to path.user.name, user_path(path.user) %></span></p>
             <p><%= path.user.age %> años</p>
             <p><%= path.user.ocupation %></p>
           </div>
         </article>
         <article class='col-md-8 info'>
-          <h1>Route 1</h1>
-          <%= path.date %>
+          <% if path.datetime.to_date == Date.tomorrow %>
+            <h3>Mañana - <%= path.datetime.time.strftime("%H:%M") %></h3>
+            <h4><%= Station.find(path.origin_station_id).name %><i class="fa fa-long-arrow-right"></i><%= Station.find(path.destination_station_id).name %></h4>
+          <% end %>
         </article>
       </section>
       <hr>

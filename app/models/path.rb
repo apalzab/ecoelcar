@@ -17,4 +17,6 @@ class Path < ActiveRecord::Base
   has_one :destination_station, class_name: Station
 
   belongs_to :user
+
+  # validates :origin_destination_id, :destination_station_id, presence: true
 end
