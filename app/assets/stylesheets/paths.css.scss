@@ -1,0 +1,41 @@
+// Place all the styles related to the Paths controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.paths-wrap{
+    margin: 0 auto;
+    margin-top: 3.5em;
+    width: 70%;
+    background: white;
+    border: 2px solid white;
+    border-radius: 2px 2px 2px #333; 
+  .new-route {
+    padding: 1em 2em 47em 2em;
+    header {
+      padding-bottom: 2em;
+    }
+    .route {
+      width: 55%;
+      float: left;
+      .type {
+        ul {
+          li {
+            display: inline;
+            padding-right: 8em;
+          }
+        }
+      }
+    }
+    .itinerary {
+      width: 40%;
+      margin-left: 3em;
+      float: right;
+    }
+
+  }
+}
+
+#map { 
+    height: 20em;
+    width: 100%;
+}

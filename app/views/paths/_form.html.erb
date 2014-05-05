@@ -1,14 +1,85 @@
 <div class="paths-wrap">
-  <section class="routes">
+  <section class="new-route">
+    <header><h1>Publica tu ruta</h1></header>
     <section class="route">
-      <div class="panel panel-primary">
+      <article class="type">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Tipo de Ruta</h3>
+          </div>
+          <div class="panel-body">
+            <ul>
+              <li>
+                <label>
+                <input type="radio" name="optionsRadios" checked="">
+                Ruta puntual
+              </label>
+              </li>
+              <li>
+                <label>
+                <input type="radio" name="optionsRadios">
+                Ruta habitual
+                </label>
+              </li>
+            </ul>
+          </div>
+      </article>
+
+      <article class="directions">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+              <h3 class="panel-title">Ruta</h3>
+            </div>
+            <div class="panel-body">
+              <h5>Estación de origen</h5>
+              <select multiple="" class="form-control" id="origin">
+                <option data-latlng="43.271674,-2.939186">Bilbao, Deusto</option>
+                <option data-latlng="43.256076,-2.936454">Bilbao, Plaza de Toros</option>
+                <option data-latlng="43.255033,-2.943980">Bilbao, Ametzola (calle Gordoniz)</option>
+                <option data-latlng="43.261919,-2.911929">Bilbao, Begoña (calle Zabalbide)</option>
+                <option data-latlng="43.297350,-2.986217">Barakaldo (Herriko Plaza)</option>
+                <option data-latlng="43.341034,-3.003918">Getxo (calle Zarrenebarri)</option>
+                <option data-latlng="43.323585,-3.013523">Las Arenas (calle Novia Salcedo)</option>
+                <option data-latlng="43.322706,-3.025191">Portugalete (calle General Castaños)</option>
+              </select>
+              <h5>Estación de destino</h5>
+              <select multiple="" class="form-control" id="destination">
+                <option data-latlng="43.271674,-2.939186">Bilbao, Deusto</option>
+                <option data-latlng="43.256076,-2.936454">Bilbao, Plaza de Toros</option>
+                <option data-latlng="43.255033,-2.943980">Bilbao, Ametzola (calle Gordoniz)</option>
+                <option data-latlng="43.261919,-2.911929">Bilbao, Begoña (calle Zabalbide)</option>
+                <option data-latlng="43.297350,-2.986217">Barakaldo (Herriko Plaza)</option>
+                <option data-latlng="43.341034,-3.003918">Getxo (calle Zarrenebarri)</option>
+                <option data-latlng="43.323585,-3.013523">Las Arenas (calle Novia Salcedo)</option>
+                <option data-latlng="43.322706,-3.025191">Portugalete (calle General Castaños)</option>
+              </select>
+            </div>
+          </div>
+      </article>
+
+      <article class="date">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+              <h3 class="panel-title">Día y Hora</h3>
+            </div>
+            <div class="panel-body">
+              
+            </div>
+          </div>
+      </article>
+
+    </section>
+
+    <article class="itinerary">
+      <div class="panel panel-primary type">
         <div class="panel-heading">
-          <h3 class="panel-title">Nueva Ruta</h3>
+          <h3 class="panel-title">Itinerario</h3>
         </div>
         <div class="panel-body">
-          Hello
+          <article id="map"/></article>
         </div>
-    </section>
-    
+      </div>
+    </article>
+
   </section>
 </div>

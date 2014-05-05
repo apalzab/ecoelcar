@@ -226,3 +226,14 @@ body, h1, h2, h3, h4 {
   right: 0;
   border-color: $light-blue;
 }
+
+.panel-primary {
+  .panel-heading {
+    color: black;
+    background-color: #fafafa;
+  }
+  .panel-body {
+    background-color: #f1f1e9;
+  }
+
+  }
