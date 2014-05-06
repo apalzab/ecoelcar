@@ -80,8 +80,6 @@ Ecoelcar::Application.configure do
 
   config.assets.compile = true
 
-  config.assets.precompile += %w(.svg .eot .woff .ttf)
-
   config.assets.precompile += ['*.js', '*.css', '*.css.erb']
 
   config.action_mailer.delivery_method = :ses

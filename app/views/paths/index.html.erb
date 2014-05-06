@@ -25,7 +25,7 @@
           </div>
         </article>
         <article class='col-md-8 info'>
-          <% if path.datetime.to_date == Date.tomorrow %>
+          <% if path.datetime.to_date %>
             <h3>Mañana - <%= path.datetime.time.strftime("%H:%M") %></h3>
             <h4><%= Station.find(path.origin_station_id).name %><i class="fa fa-long-arrow-right"></i><%= Station.find(path.destination_station_id).name %></h4>
           <% end %>
