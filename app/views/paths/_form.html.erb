@@ -30,15 +30,18 @@
       <article class="directions">
         <div class="panel panel-primary">
           <div class="panel-heading">
-              <h3 class="panel-title">Ruta</h3>
-            </div>
-            <div class="panel-body">
-              <h5>Estación de origen</h5>
-              <%= f.select :origin_station_id, Station.all.collect {|x| [x.name, x.id, { 'data-latlng' => x.latlng }]}, {}, :multiple => true, :class => "form-control", :id => 'origin' %>
-              <h5>Estación de destino</h5>
-              <%= f.select :destination_station_id, Station.all.collect {|x| [x.name, x.id, { 'data-latlng' => x.latlng }]}, {}, :multiple => true, :class => "form-control", :id => 'destination' %>
+            <h3 class="panel-title">Ruta</h3>
+          </div>
+          <div class="panel-body">
+            <h5>Estación de origen</h5>
+            <%= f.select :origin_station_id, Station.all.collect {|x| [x.name, x.id, { 'data-latlng' => x.latlng }]}, {}, :multiple => true, :class => "form-control", :id => 'origin' %>
+            <h5>Estación de destino</h5>
+            <%= f.select :destination_station_id, Station.all.collect {|x| [x.name, x.id, { 'data-latlng' => x.latlng }]}, {}, :multiple => true, :class => "form-control", :id => 'destination' %>
+            <div style="display:none">
+              <textarea id="path_route_spots" name="path[route_spots]"></textarea>
             </div>
           </div>
+        </div>
       </article>
 
       <article class="date">
@@ -47,10 +50,8 @@
               <h3 class="panel-title">Día y Hora</h3>
             </div>
             <div class="panel-body">
-              <%= f.label :datetime, 'Fecha' %>
               <%= f.date_field :datetime %>
-              <%= f.label :datetime, 'Hora' %>
-              <%= f.input :datetime, :as => :time_select, :label => false, :input_html => { :color => 'black' } %>
+              <%= f.input :datetime, :as => :time_select %>
             </div>
           </div>
       </article>

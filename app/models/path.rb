@@ -18,5 +18,5 @@ class Path < ActiveRecord::Base
 
   belongs_to :user
 
-  # validates :origin_destination_id, :destination_station_id, presence: true
+  validates :origin_station_id, :destination_station_id, :route_spots, :datetime, presence: true
 end

@@ -60,11 +60,11 @@ function initialize() {
 
     directionsService.route(request, function(result, status) {
       if (status == google.maps.DirectionsStatus.OK) {
-        path = result.routes[0].overview_path;
-        path = path.join(';');
         directionsDisplay.setDirections(result);
         origin_marker.setMap(null);
         destination_marker.setMap(null);
+        path_spots = result.routes[0].overview_path;
+        $('#path_route_spots').text(path_spots.join(';'));
       }
     });
   }
