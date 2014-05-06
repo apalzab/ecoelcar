@@ -24,11 +24,21 @@
             <p><%= path.user.ocupation %></p>
           </div>
         </article>
-        <article class='col-md-8 info'>
-          <% if path.datetime.to_date %>
+        <article class='col-md-6 info'>
+          <% if path.datetime.to_date == Date.tomorrow %>
             <h3>Mañana - <%= path.datetime.time.strftime("%H:%M") %></h3>
-            <h4><%= Station.find(path.origin_station_id).name %><i class="glyphicon glyphicon-arrow-right"></i><%= Station.find(path.destination_station_id).name %></h4>
+          <% else %>
+              <h3><%= get_human_week_day(path.datetime) %> <%= path.datetime.to_date.strftime('%d') %> de <%= get_human_month(path.datetime) %> - <%= path.datetime.time.strftime("%H:%M") %></h3>
           <% end %>
+            <h4><%= Station.find(path.origin_station_id).name %><i class="glyphicon glyphicon-arrow-right"></i><%= Station.find(path.destination_station_id).name %></h4>
+        </article>
+        <article class='col-md-3 description'>
+          <ul>
+            <li><h3>1€</h3></li>
+            <li>por pasajero</li>
+            <li><h4>4 Plazas libres</h4></li>
+            <li></li>
+          </ul>
         </article>
       </section>
       <hr>

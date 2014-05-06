@@ -14,6 +14,7 @@ class PathsController < ApplicationController
     datetime = DateTime.new(date.year, date.month, date.day, time.hour, time.strftime('%M').to_i)
     current_user.paths.create(origin_station_id: params[:path][:origin_station_id][1],
       destination_station_id: params[:path][:destination_station_id][1], datetime: datetime, route_spots: params[:path][:route_spots])
+    render 'show'
   end
 
   private
