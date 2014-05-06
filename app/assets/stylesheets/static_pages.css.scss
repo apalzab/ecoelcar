@@ -65,29 +65,44 @@
 .how-it-works {
   background: #F5F5F5;
   border-top: 1px solid rgba(255,255,255,0.1);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  // border-bottom: 1px solid rgba(0,0,0,0.1);
   padding-bottom: 1em;
   font-size: 2.6em;
   header {
     font-size: 1em;
     margin-bottom: 1em;
   }
+  video {
+    clear: both;
+  }
   article {
     margin-top: .5em;
     &:last-child {
       float: right;
     }
-    ul li {
-      text-decoration: none;
-      list-style-type: none;
-      a {
-        font-size: 0.5em;
-        color: #000;
-        &:hover {
+    ul {
+      padding-left: 0;
+        li {
           text-decoration: none;
+          list-style-type: none;
+          a {
+            font-size: 0.5em;
+            color: #000;
+            &:hover {
+              text-decoration: none;
+            }
+          }
         }
       }
-    }
+  }
+}
+
+.video {
+  width: 100;
+  background: #F5F5F5;
+  video {
+    width: 100%;
+
   }
 }
 

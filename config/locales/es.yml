@@ -23,10 +23,10 @@ es:
     top:
       share:
         header: 'Comparte tu vehículo'
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita multa dicunt, quae vix intellegam. Dolere malum est: in crucem qui agitur, beatus esse non potest. Quid censes in Latino fore? Primum in nostrane potestate est, quid meminerimus? Satisne ergo pudori consulat, si quis sine teste libidini pareat? Duo Reges: constructio interrete. Quoniam, si dis placet, ab Epicuro loqui discimus. Quam ob rem tandem, inquit, non satisfacit? Nam Pyrrho, Aristo, Erillus iam diu abiecti.'
+        description: ''
       search_routes:
         header: 'Busca rutas publicadas'
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita multa dicunt, quae vix intellegam. Dolere malum est: in crucem qui agitur, beatus esse non potest. Quid censes in Latino fore? Primum in nostrane potestate est, quid meminerimus? Satisne ergo pudori consulat, si quis sine teste libidini pareat? Duo Reges: constructio interrete. Quoniam, si dis placet, ab Epicuro loqui discimus. Quam ob rem tandem, inquit, non satisfacit? Nam Pyrrho, Aristo, Erillus iam diu abiecti.'
+        description: ''
 
   profile:
     attributes:
