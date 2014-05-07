@@ -6,21 +6,25 @@
       </div>
       <div class="panel-body">
         <article class="personal-info">
-          <div class="modify"><%= link_to "Modificar", edit_user_path, class: 'btn btn-primary' %></div>
+          <div class="modify">
+            <% if current_user == @user %>
+              <%= link_to "Modificar", edit_user_path, class: 'btn btn-primary' %>
+            <% end %>
+          </div>
           <strong><h4>Información Personal</h4></strong>
           <div class="basic">
             <div class="image">
-              <%= image_tag current_user.photo.url %>
+              <%= image_tag @user.photo.url %>
             </div>
             <div class="bio">
               <ul>
                 <li><h5>ID usuario | email</h5></li>
-                <li><%= current_user.email || I18n.t('profile.attributes.no_data') %></li>
+                <li><%= @user.email || I18n.t('profile.attributes.no_data') %></li>
                 <li><h5>Nombre y Apellidos</h5></li>
-                <li><%= current_user.name || I18n.t('profile.attributes.no_data') %> <%= current_user.last_name || I18n.t('profile.attributes.no_data') %></li>
-                <li><span>Edad: </span><%= current_user.age %></li>
-                <li><span>Años de experiencia: </span><%= current_user.drive_license_old %></li>
-                <li><span>Profesión: </span><%= current_user.ocupation %></li>
+                <li><%= @user.name || I18n.t('profile.attributes.no_data') %> <%= @user.last_name || I18n.t('profile.attributes.no_data') %></li>
+                <li><span>Edad: </span><%= @user.age %></li>
+                <li><span>Años de experiencia: </span><%= @user.drive_license_old %></li>
+                <li><span>Profesión: </span><%= @user.ocupation %></li>
               </ul>
             </div>
           </div>
@@ -28,9 +32,9 @@
           <div class="extra">
             <ul>
               <li><h5>Aficiones</h5></li>
-              <li><%= current_user.hobbies || I18n.t('profile.attributes.no_data') %></li>
+              <li><%= @user.hobbies || I18n.t('profile.attributes.no_data') %></li>
               <li><h5>Descripción</h5></li>
-              <li><%= current_user.description || I18n.t('profile.attributes.no_data') %></li>
+              <li><%= @user.description || I18n.t('profile.attributes.no_data') %></li>
             </ul>
           </div>
         </article>
@@ -40,16 +44,16 @@
         <article class="car-info">
           <strong><h4>Mi Coche</h4></strong>
           <div class="info">
-          <% if current_user.vehicles.first %>
+          <% if @user.vehicles.first %>
             <ul>
-              <li><span>Marca y Modelo: </span><%= current_user.vehicles.first.brand %> <%= current_user.vehicles.first.model %></li>
-              <li><span>Número de plazas: </span><%= current_user.vehicles.first.seats %></li>
-              <li><span>Caballos:</span> <%= current_user.vehicles.first.horse_power || I18n.t('profile.attributes.no_data') %></li>
-              <li><span>Año de matriculación: </span><%= current_user.vehicles.first.year_of_registration || I18n.t('profile.attributes.no_data') %></li>
+              <li><span>Marca y Modelo: </span><%= @user.vehicles.first.brand %> <%= @user.vehicles.first.model %></li>
+              <li><span>Número de plazas: </span><%= @user.vehicles.first.seats %></li>
+              <li><span>Caballos:</span> <%= @user.vehicles.first.horse_power || I18n.t('profile.attributes.no_data') %></li>
+              <li><span>Año de matriculación: </span><%= @user.vehicles.first.year_of_registration || I18n.t('profile.attributes.no_data') %></li>
             </ul>
           </div>
           <div class="image">
-            <%= image_tag current_user.vehicles.first.photo.url %>
+            <%= image_tag @user.vehicles.first.photo.url %>
           </div>
           <% else %>
             <%= I18n.t('profile.attributes.no_data') %>
