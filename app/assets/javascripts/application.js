@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
+//= require jquery-readyselector
 //= require bootstrap
 //= require nested_form_fields
 //= require_tree .
