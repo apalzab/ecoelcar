@@ -8,7 +8,7 @@ Ecoelcar::Application.routes.draw do
   root 'static_pages#index'
 
   localized do
-    resources :paths
+    resources :tracks
     resources :users, only: [:show, :edit, :update]
   end
 

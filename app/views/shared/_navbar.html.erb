@@ -10,8 +10,8 @@
   <div class="navbar-collapse collapse" id="navbar-main" style="height: 0.800000011920929px;">
     <ul class="nav navbar-nav">
       <% if user_signed_in? %>
-        <li><%= link_to I18n.t("navbar.search_routes"), paths_path %></li>
-        <li><%= link_to I18n.t("navbar.share_vehicle"), new_path_path %></li>
+        <li><%= link_to I18n.t("navbar.search_routes"), tracks_path %></li>
+        <li><%= link_to I18n.t("navbar.share_vehicle"), new_track_path %></li>
       <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">

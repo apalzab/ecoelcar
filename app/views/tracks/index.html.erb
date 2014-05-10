@@ -1,0 +1,48 @@
+<div class="paths-wrap">
+  <section class="routes">
+    <header><h1>Buscar Rutas</h1></header>
+    <div class="panel panel-primary search">
+      <div class="panel-heading">
+        <h1 class="panel-title col-md-9"><%= @tracks.count %> Rutas publicadas</h1>
+        <div class="buttons">
+          <h5 class="col-md-1">Ordenar por</h5>
+          <%= link_to "Fecha", tracks_path, class: 'btn btn-primary' %>
+          <%= link_to "Precio", tracks_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+
+    <% @tracks.each do |track| %>
+      <section class="route row">
+        <article class='col-md-3 profile'>
+          <div class="image">
+            <%= image_tag track.user.photo.url %>
+          </div>
+          <div class="description">
+            <p><span><%= link_to track.user.name, user_path(track.user) %></span></p>
+            <p><%= track.user.age %> años</p>
+            <p><%= track.user.ocupation %></p>
+          </div>
+        </article>
+        <article class='col-md-6 info'>
+          <% if track.datetime.to_date == Date.tomorrow %>
+            <h3>Mañana - <%= track.datetime.time.strftime("%H:%M") %></h3>
+          <% else %>
+              <h3><%= get_human_week_day(track.datetime) %> <%= track.datetime.to_date.strftime('%d') %> de <%= get_human_month(track.datetime) %> - <%= track.datetime.time.strftime("%H:%M") %></h3>
+          <% end %>
+            <h4><%= Station.find(track.origin_station_id).name %><i class="glyphicon glyphicon-arrow-right"></i><%= Station.find(track.destination_station_id).name %></h4>
+        </article>
+        <article class='col-md-3 description'>
+          <ul>
+            <li><h3>1€</h3></li>
+            <li>por pasajero</li>
+            <li><h4>4 Plazas libres</h4></li>
+            <li></li>
+          </ul>
+        </article>
+      </section>
+      <hr>
+  <% end %>
+    </section>
+  
+</div>
