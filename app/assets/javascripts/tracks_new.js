@@ -2,6 +2,14 @@ $('.tracks.new').ready(function () {
   console.log('in paths new');
   initialize();
 
+  $('.route input[type="submit"]').click(function() {
+    var date = new Date($('#datetimepicker input').val());
+    $('#datetime').val(date);
+  });
+
+  $('#datetimepicker').datetimepicker({
+  });
+
 
   function initialize() {
       console.log('initializing the map');

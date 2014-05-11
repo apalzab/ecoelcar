@@ -19,4 +19,5 @@ class Track < ActiveRecord::Base
   belongs_to :user
 
   validates :origin_station_id, :destination_station_id, :route_spots, :datetime, presence: true
+
 end

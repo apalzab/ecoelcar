@@ -25,6 +25,8 @@ gem 'sass-rails', '~> 4.0.2'
 
 # Use Bootsrap framework
 gem 'bootstrap3-rails'
+gem 'momentjs-rails', '~> 2.5.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0'
 
 #gem 'font-awesome-sass'
 

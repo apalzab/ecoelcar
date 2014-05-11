@@ -16,5 +16,7 @@
 //= require jquery.turbolinks
 //= require jquery-readyselector
 //= require bootstrap
+//= require moment
+//= require bootstrap-datetimepicker
 //= require nested_form_fields
 //= require_tree .
