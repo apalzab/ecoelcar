@@ -228,12 +228,16 @@ body, h1, h2, h3, h4 {
 }
 
 .panel-primary {
+  border: 1px solid #d1d1d1;
   .panel-heading {
     color: black;
     background-color: #fafafa;
+    border-bottom: 1px solid #d1d1d1;
   }
   .panel-body {
     background-color: #f1f1e9;
+    &.map {
+      background-color: white;
+    }
   }
-
-  }
+}

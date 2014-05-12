@@ -8,6 +8,7 @@ $('.tracks.new').ready(function () {
   });
 
   $('#datetimepicker').datetimepicker({
+      minDate: Date()
   });
 
 
