@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require jquery-readyselector
+//= require chosen-jquery
 //= require bootstrap
 //= require moment
 //= require bootstrap-datetimepicker

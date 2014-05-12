@@ -2,6 +2,12 @@
   <section class="new-route">
   
     <%= semantic_form_for :track, :url => tracks_path do |f| %>
+
+
+  <!--   <%= f.select :author,
+      Station.all.map { |s| [s.name, s.id] },
+      { class: 'chosen-select' }
+    %> -->
     <header><h1>Publica tu ruta</h1></header>
     <section class="route">
       <article class="type">

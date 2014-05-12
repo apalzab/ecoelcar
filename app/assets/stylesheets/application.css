@@ -12,5 +12,6 @@
  *= require bootstrap
  *= require bootswatch
  *= require bootstrap-datetimepicker
+ *= require chosen
  *= require_tree .
  */

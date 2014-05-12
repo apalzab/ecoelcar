@@ -28,6 +28,8 @@ gem 'bootstrap3-rails'
 gem 'momentjs-rails', '~> 2.5.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0'
 
+gem 'chosen-rails'
+
 #gem 'font-awesome-sass'
 
 # Use aws-ses for email delivery
