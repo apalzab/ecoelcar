@@ -4,10 +4,11 @@
     <%= semantic_form_for :track, :url => tracks_path do |f| %>
 
 
-  <!--   <%= f.select :author,
+    <%= f.select :author,
       Station.all.map { |s| [s.name, s.id] },
+      { include_blank: true },
       { class: 'chosen-select' }
-    %> -->
+    %> 
     <header><h1>Publica tu ruta</h1></header>
     <section class="route">
       <article class="type">
@@ -80,7 +81,16 @@
           <article id="map"/></article>
         </div>
       </div>
-    </article>
 
+      <div class="panel panel-primary type">
+        <div class="panel-heading">
+          <h3 class="panel-title">Datos de la ruta</h3>
+        </div>
+        <div class="panel-body map">
+          <article class='information'>
+          </article>
+        </div>
+      </div>
+    </article>
   </section>
 </div>

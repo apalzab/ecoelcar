@@ -73,17 +73,15 @@ $('.tracks.new').ready(function () {
       });
 
     function calculateRoute() {
-      var avoidTolls = $('.map_automatic_settings input[type="checkbox"]').is(':checked');
       var request = {
         origin: origin_marker.getPosition(),
         destination: destination_marker.getPosition(),
         travelMode: google.maps.TravelMode.DRIVING,
-        provideRouteAlternatives: true,
-        avoidTolls: avoidTolls
       };
-
       directionsService.route(request, function(result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
+          $('.itinerary .information').html('<p>Distancia: ' + (result.routes[0].legs[0].distance.value/1000).toFixed(2) + " Km</p>");
+          $('.itinerary .information').append('<p>Duración: ' + (result.routes[0].legs[0].duration.value/60).toFixed(2) + " minutos</p>");
           directionsDisplay.setDirections(result);
           origin_marker.setMap(null);
           destination_marker.setMap(null);
@@ -102,9 +100,3 @@ $('.tracks.new').ready(function () {
   }
 
 });
-
-
-  // window.onload = loadScript;
-
-// $(document).ready(loadScript);
-// $(document).on('page:load', loadScript);
