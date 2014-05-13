@@ -36,7 +36,7 @@
           <ul>
             <li><h3><%= rand(0.6..1.2).round(2) %>€</h3></li>
             <li>por pasajero</li>
-            <li><h4>4 Plazas libres</h4></li>
+            <li><h4><%= track.free_seats %> plazas libres</h4></li>
             <li><%= link_to "Ver Ruta", track_path(track), class: 'btn btn-warning' %></li>
           </ul>
         </article>

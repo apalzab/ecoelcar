@@ -21,4 +21,10 @@ class Track < ActiveRecord::Base
 
   validates :origin_station_id, :destination_station_id, :route_spots, :datetime, presence: true
 
+  before_create :define_params
+
+
+  def define_params
+    self.free_seats = User.find(self.user_id).vehicles.first.seats - 1
+  end
 end

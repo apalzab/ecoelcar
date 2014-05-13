@@ -24,7 +24,7 @@
           <h3 class="panel-title"><%= rand(0.6..1.2).round(2) %>€ por pasajero</h3>
         </div>
         <div class="panel-body">
-          <h4>4 plazas libres</h4>
+          <h4><%= track.free_seats %> plazas libres</h4>
         </div>
         <div class="book">
           <% if  current_user.id != @track.user_id %>
