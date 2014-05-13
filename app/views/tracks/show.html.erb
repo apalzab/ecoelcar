@@ -14,7 +14,7 @@
           <% end %>
           <p><strong>Hora de salida:</strong> <%= @track.datetime.time.strftime("%H:%M") %></p>
           <div class="publication">
-            <p>Fecha de publicación: <%= @track.created_at.to_date.strftime('%m/%d/%Y') %></p>
+            <p>Fecha de publicación: <%= @track.created_at.to_date.strftime('%d/%m/%Y') %></p>
           </div>
         </div>
     </article>

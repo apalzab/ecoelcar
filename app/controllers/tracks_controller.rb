@@ -16,7 +16,7 @@ class TracksController < ApplicationController
 
   private
   def track_params
-    params.require(:track).permit(:origin_station_id, :destination_station_id, :route_spots, :datetime)
+    params.require(:track).permit(:origin_station_id, :destination_station_id, :route_spots, :datetime, :free_seats)
   end
 
 end
