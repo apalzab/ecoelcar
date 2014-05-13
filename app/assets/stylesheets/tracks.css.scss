@@ -112,7 +112,9 @@
       width: 30%;
       .panel {
         .panel-heading {
-         
+         span {
+          font-size: 1.3em;
+         }
         }
         .panel-body {
           background: white;

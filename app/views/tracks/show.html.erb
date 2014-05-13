@@ -21,10 +21,14 @@
     <article class="details">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title"><%= rand(0.6..1.2).round(2) %>€ por pasajero</h3>
+          <h3 class="panel-title"><span><%= rand(0.6..1.2).round(2) %>€</span> por pasajero</h3>
         </div>
         <div class="panel-body">
           <h4><%= @track.free_seats %> plazas libres</h4>
+          <%= image_tag 'driver.png' %>
+          <% (1..@track.free_seats).each do %>
+            <%= image_tag 'seat.png' %>
+          <% end %>
         </div>
         <div class="book">
           <% if  current_user.id != @track.user_id %>
