@@ -84,6 +84,59 @@
       }
     }
   }
+  .route-info {
+    padding: 1em 2em 0 2em;
+    overflow: hidden;
+    header {
+      padding-bottom: 2em;
+    }
+    .description {
+      width: 55%;
+      float: left;
+      .panel-heading {
+         background: white;
+         i {
+            margin: 0 1em 0 1em;
+          }
+        }
+      .panel-body {
+        background: white;
+        .publication {
+          float: right;
+          padding-top: 2em;
+        }
+      }
+    }
+    .details {
+      float: right;
+      width: 30%;
+      .panel {
+        .panel-heading {
+         
+        }
+        .panel-body {
+          background: white;
+        }
+        &.driver {
+          margin-top: 2em;
+          .panel-body {
+            .image {
+              width: 32%;
+              float: left;
+              img {
+                max-width: 100%;
+              }
+            }
+            .info {
+              padding-left: 2em;
+              float: left;
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 #map { 

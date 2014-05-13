@@ -6,7 +6,12 @@ class TracksController < ApplicationController
 
   def create
     current_user.tracks.create(track_params)
-    render 'show'
+    @track = current_user.tracks.last
+    redirect_to @track
+  end
+
+  def show
+    @track = Track.find(params[:id])
   end
 
   private

@@ -1,15 +1,16 @@
 # == Schema Information
 #
-# Table name: paths
+# Table name: tracks
 #
 #  id                     :integer          not null, primary key
 #  user_id                :integer
 #  origin_station_id      :integer
 #  destination_station_id :integer
 #  datetime               :datetime
-#  route_spots            :string(255)
+#  route_spots            :text
 #  created_at             :datetime
 #  updated_at             :datetime
+#  free_seats             :integer
 #
 
 class Track < ActiveRecord::Base

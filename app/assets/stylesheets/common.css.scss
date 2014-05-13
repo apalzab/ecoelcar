@@ -198,9 +198,10 @@ background-color: #333;
 @font-face {
   font-family: 'OpenSans-Bold';
   src: url("Open_Sans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
 
-.bold {
+strong {
   font-family: 'OpenSans-Bold';
 }
 
