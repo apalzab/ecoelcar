@@ -1,74 +1,79 @@
-<div class="profile-wrap">
-  <section class="panels">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Información de Perfil</h3>
-      </div>
-      <div class="panel-body">
-        <article class="personal-info">
-          <div class="modify">
-            <% if current_user == @user %>
-              <%= link_to "Modificar", edit_user_path, class: 'btn btn-primary' %>
-            <% end %>
-          </div>
-          <strong><h4>Información Personal</h4></strong>
-          <div class="basic">
-            <div class="image">
-              <%= image_tag @user.photo.url %>
+<div class="white-wrap">
+  <section class="profile">
+    <% if current_user.name %>
+      <header><h1>Perfil de <%= current_user.name.capitalize %></h1></header>
+    <% end %>
+    <section class="panels">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Información de Perfil</h3>
+        </div>
+        <div class="panel-body">
+          <article class="personal-info">
+            <div class="modify">
+              <% if current_user == @user %>
+                <%= link_to "Modificar", edit_user_path, class: 'btn btn-primary' %>
+              <% end %>
             </div>
-            <div class="bio">
+            <strong><h4>Información Personal</h4></strong>
+            <div class="basic">
+              <div class="image">
+                <%= image_tag @user.photo.url %>
+              </div>
+              <div class="bio">
+                <ul>
+                  <li><h5>ID usuario | email</h5></li>
+                  <li><%= @user.email || I18n.t('profile.attributes.no_data') %></li>
+                  <li><h5>Nombre y Apellidos</h5></li>
+                  <li><%= @user.name || I18n.t('profile.attributes.no_data') %> <%= @user.last_name || I18n.t('profile.attributes.no_data') %></li>
+                  <li><span>Edad: </span><%= @user.age %></li>
+                  <li><span>Años de experiencia: </span><%= @user.drive_license_old %></li>
+                  <li><span>Profesión: </span><%= @user.ocupation %></li>
+                </ul>
+              </div>
+            </div>
+            <hr>
+            <div class="extra">
               <ul>
-                <li><h5>ID usuario | email</h5></li>
-                <li><%= @user.email || I18n.t('profile.attributes.no_data') %></li>
-                <li><h5>Nombre y Apellidos</h5></li>
-                <li><%= @user.name || I18n.t('profile.attributes.no_data') %> <%= @user.last_name || I18n.t('profile.attributes.no_data') %></li>
-                <li><span>Edad: </span><%= @user.age %></li>
-                <li><span>Años de experiencia: </span><%= @user.drive_license_old %></li>
-                <li><span>Profesión: </span><%= @user.ocupation %></li>
+                <li><h5>Aficiones</h5></li>
+                <li><%= @user.hobbies || I18n.t('profile.attributes.no_data') %></li>
+                <li><h5>Descripción</h5></li>
+                <li><%= @user.description || I18n.t('profile.attributes.no_data') %></li>
               </ul>
             </div>
-          </div>
-          <hr>
-          <div class="extra">
-            <ul>
-              <li><h5>Aficiones</h5></li>
-              <li><%= @user.hobbies || I18n.t('profile.attributes.no_data') %></li>
-              <li><h5>Descripción</h5></li>
-              <li><%= @user.description || I18n.t('profile.attributes.no_data') %></li>
-            </ul>
-          </div>
-        </article>
+          </article>
+        </div>
+        <hr>
+        <div class="panel-body">
+          <article class="car-info">
+            <strong><h4>Mi Coche</h4></strong>
+            <div class="info">
+            <% if @user.vehicles.first %>
+              <ul>
+                <li><span>Marca y Modelo: </span><%= @user.vehicles.first.brand %> <%= @user.vehicles.first.model %></li>
+                <li><span>Número de plazas: </span><%= @user.vehicles.first.seats %></li>
+                <li><span>Caballos:</span> <%= @user.vehicles.first.horse_power || I18n.t('profile.attributes.no_data') %></li>
+                <li><span>Año de matriculación: </span><%= @user.vehicles.first.year_of_registration || I18n.t('profile.attributes.no_data') %></li>
+              </ul>
+            </div>
+            <div class="image">
+              <%= image_tag @user.vehicles.first.photo.url %>
+            </div>
+            <% else %>
+              <%= I18n.t('profile.attributes.no_data') %>
+            <% end %>
+          </article>
+        </div>
       </div>
-      <hr>
-      <div class="panel-body">
-        <article class="car-info">
-          <strong><h4>Mi Coche</h4></strong>
-          <div class="info">
-          <% if @user.vehicles.first %>
-            <ul>
-              <li><span>Marca y Modelo: </span><%= @user.vehicles.first.brand %> <%= @user.vehicles.first.model %></li>
-              <li><span>Número de plazas: </span><%= @user.vehicles.first.seats %></li>
-              <li><span>Caballos:</span> <%= @user.vehicles.first.horse_power || I18n.t('profile.attributes.no_data') %></li>
-              <li><span>Año de matriculación: </span><%= @user.vehicles.first.year_of_registration || I18n.t('profile.attributes.no_data') %></li>
-            </ul>
-          </div>
-          <div class="image">
-            <%= image_tag @user.vehicles.first.photo.url %>
-          </div>
-          <% else %>
-            <%= I18n.t('profile.attributes.no_data') %>
-          <% end %>
-        </article>
-      </div>
-    </div>
 
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Cuenta</h3>
+      <div class="panel panel-primary account-settings">
+        <div class="panel-heading">
+          <h3 class="panel-title">Cuenta</h3>
+        </div>
+        <div class="panel-body">
+          <%= link_to "Cambiar Contraseña", edit_user_registration_path %>
+        </div>
       </div>
-      <div class="panel-body">
-        <%= link_to "Cambiar Contraseña", edit_user_registration_path %>
-      </div>
-    </div>
+    </section>
   </section>
 </div>

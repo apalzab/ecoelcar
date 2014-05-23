@@ -5,94 +5,100 @@ body {
   background: #f6fcff url("background.png") repeat-x center top;
   -webkit-backface-visibility: hidden;
 }
-.profile-wrap {
-  width: 70%;
-  margin: 0 auto;
-  padding-top: 9em;
-  .panels {
-    width: 50%;
-    margin: 0 auto;
-    .panel {
-      input, textarea {
-        border: none;
-        border: 1px solid #ecf0f1;
-        width: 100%;
-        margin: .4em 0 .4em 0;
-        padding: .4em;
-        font-size: 1em;
-        &:focus {
-          outline: none;
+.white-wrap {
+  .profile {
+    padding: 1em 2em 0 2em;
+    .panels {
+      width: 70%;
+      margin: 0 auto;
+      padding-top: 3em;
+      .panel {
+        input, textarea {
+          border: none;
+          border: 1px solid #ecf0f1;
+          width: 100%;
+          margin: .4em 0 .4em 0;
+          padding: .4em;
+          font-size: 1em;
+          &:focus {
+            outline: none;
+          }
         }
-      }
-      span {
-        font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 400;
-        line-height: 1.1;
-        color: inherit;
-      }
-      .panel-title {
-        font-size: 1.5em;
-      }
-      .panel-body {
-        ul {
-          padding-left: 0;
+        span {
+          font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-weight: 400;
+          line-height: 1.1;
+          color: inherit;
         }
-        .personal-info {
-          .modify {
-            float: right;
-            li {
+        .panel-title {
+          font-size: 1.5em;
+        }
+        .panel-body {
+          ul {
+            padding-left: 0;
+          }
+          .personal-info {
+            .modify {
+              float: right;
+              li {
+              }
+            }
+            hr {
+              clear: both;
+              margin-top: 13em;
+              border-color: white;
+            }
+            .basic {
+              padding: 1em 0 1em 0;
+              .image {
+                width: 30%;
+                float: left;
+                img {
+                  max-width: 100%;
+                  // border: 1px solid black;
+                  box-shadow: 1px 1px 1px #333;
+                  border-radius: 5px;
+                }
+              }
+              .bio {
+                width: 50%;
+                float: right;
+                ul {
+                  margin: 0;
+                }
+              }
+            }
+            .extra {
+              clear: both;
             }
           }
-          hr {
-            clear: both;
-            margin-top: 13em;
-            border-color: white;
-          }
-          .basic {
-            padding: 1em 0 1em 0;
-            .image {
-              width: 30%;
+          .car-info {
+            .info {
               float: left;
+              width: 50%;
+            }
+            .image {
+              li {
+                width: 50%;
+                float: right;
+                input {
+                  border: none;
+                }
+              }
               img {
-                max-width: 100%;
-                // border: 1px solid black;
-                box-shadow: 1px 1px 1px #333;
+                max-width: 50%;
                 border-radius: 5px;
+                box-shadow: 1px 1px 1px #333;
               }
-            }
-            .bio {
-              width: 50%;
-              float: right;
-              ul {
-                margin: 0;
-              }
-            }
-          }
-          .extra {
-            clear: both;
-          }
-        }
-        .car-info {
-          .info {
-            float: left;
-            width: 50%;
-          }
-          .image {
-            li {
-              width: 50%;
-              float: right;
-              input {
-                border: none;
-              }
-            }
-            img {
-              max-width: 50%;
-              border-radius: 5px;
-              box-shadow: 1px 1px 1px #333;
             }
           }
         }
       }
+    .account-settings {
+      a {
+        color: black;
+      }
+    }
     }
   }
 }
