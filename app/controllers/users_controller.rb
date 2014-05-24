@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def show
@@ -17,7 +18,9 @@ class UsersController < ApplicationController
     if @user.update_attributes user_params
       redirect_to @user
     else
+      flash[:notice] = @user.errors.full_messages
       render 'edit'
+      # redirect_to edit_user_path @user
     end
   end
 

@@ -21,7 +21,7 @@ class Vehicle < ActiveRecord::Base
   belongs_to :user
 
   has_attached_file :photo, :default_url => ActionController::Base.helpers.asset_path('missing.png')
-  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/, message: ''
 
   validates :brand, :model, :seats, presence: true
   validates :seats, inclusion: { in: 1..5 }

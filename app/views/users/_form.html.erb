@@ -28,7 +28,7 @@
                     <li><h5>Años de experiencia</h5></li>
                     <li><%= f.input :drive_license_old, :label => false, :input_html => { :paceholder => 'años' } %></li>
                     <li><h5>Profesión</h5></li>
-                    <li><%= f.input :ocupation, :label => false %></li>
+                    <li><%= f.input :ocupation, :label => false, :required => true %></li>
                   </ul>
                 </div>
               </div>
@@ -77,15 +77,6 @@
           </div>
         </div>
       <% end %>
-
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Cuenta</h3>
-        </div>
-        <div class="panel-body">
-          <%= link_to "Cambiar Contraseña", edit_user_registration_path %>
-        </div>
-      </div>
     </section>
   </section>
 </div>

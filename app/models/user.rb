@@ -39,9 +39,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_attached_file :photo, :default_url => ActionController::Base.helpers.asset_path('missing.png')
-  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   has_many :vehicles
   has_many :tracks
   accepts_nested_attributes_for :vehicles
+
+  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+  validates_presence_of :ocupation
 end

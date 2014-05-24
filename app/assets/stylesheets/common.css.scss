@@ -236,6 +236,12 @@ body, h1, h2, h3, h4 {
   padding: 1em;
   right: 0;
   border-color: $light-blue;
+  ul {
+    padding-left: 1em;
+    li {
+      list-style-type: circle;
+    }
+  }
 }
 
 .panel-primary {

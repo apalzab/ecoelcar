@@ -1,4 +1,6 @@
 es:
+  errors:
+      format: "%{message}"
   activerecord:
     models:
       user:
@@ -11,13 +13,25 @@ es:
           password_confirmation: 'contraseña'
           email: 'emilio'
     errors:
+      format: "%{message}"
       models:
         user:
           attributes:
             email:
               taken: 'El email ya está en uso'
+            ocupation:
+              blank: 'Profesion  no puede estar en blanco'
             password:
               blank: 'La contraseña no puede estar en blanco'
               too_short: 'La contraseña es demasiado corta'
             password_confirmation:
               confirmation: 'Introduce la misma contraseña en los dos campos'
+        vehicle:
+          attributes:
+            brand:
+              blank: "la marca del vehículo no puede estar en blanco"
+            model:
+              blank: "el modelo del vehículo no puede estar en blanco"
+            seats:
+              blank: "establece el número de asientos que tiene tu coche"
+              inclusion: ""

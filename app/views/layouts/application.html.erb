@@ -14,7 +14,17 @@
     <% if flash[:notice] %>
       <div class="alert alert-dismissable alert-danger notice">
         <button type="button" class="close" data-dismiss="alert">×</button>
-        <div><%= flash[:notice] %></div>
+        <div>
+            <% if flash[:notice].kind_of?(Array) %>
+              <ul>
+                <% flash[:notice].reject(&:blank?).each do |message| %>
+                  <li><p><%= message.capitalize %></p></li>
+                <% end %>
+              </ul>
+            <% else %>
+              <p><%= flash[:notice] %></p>
+            <% end %>
+        </div>
       </div>
       <% elsif flash[:alert] %>
         <div class="alert alert-dismissable alert-danger notice">
