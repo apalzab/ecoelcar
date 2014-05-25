@@ -10,6 +10,7 @@ Ecoelcar::Application.routes.draw do
   localized do
     resources :tracks
     resources :users, only: [:show, :edit, :update]
+    resources :vehicle_models
   end
 
   # Example of regular route:

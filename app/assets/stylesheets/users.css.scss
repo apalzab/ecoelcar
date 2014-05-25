@@ -76,6 +76,11 @@ body {
             .info {
               float: left;
               width: 50%;
+              h5 {
+                span {
+                  font-size: .9em;
+                }
+              }
             }
             .image {
               li {

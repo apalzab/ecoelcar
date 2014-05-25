@@ -13,5 +13,6 @@
  *= require bootswatch
  *= require bootstrap-datetimepicker
  *= require chosen
+ *= require jquery.ui.all
  *= require_tree .
  */

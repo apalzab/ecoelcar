@@ -43,7 +43,11 @@
               </div>
             </article>
           </div>
-          <hr>
+        </div>
+        <div class="panel panel-primary vehicle-configuration">
+          <div class="panel-heading">
+            <h3 class="panel-title">Mi vehículo</h3>
+          </div>
           <div class="panel-body">
             <article class="car-info">
               <strong><h4>Mi Coche</h4></strong>
@@ -54,15 +58,32 @@
                 <div class="info">
                     <ul>
                       <li><h5>Marca:</h5></li>
-                      <%= builder.input :brand, :label => false %>
+                       <%= builder.input :brand,
+                        collection: VehicleBrand.all,
+                        include_blank: true,
+                        label: false,
+                        input_html: { class: 'chosen-select brand form-control' }
+                      %>
                       <li><h5>Modelo</h5></li>
-                      <li><%= builder.input :model, :label => false %></li>
-                      <li><h5>Número de plazas: </h5></li>
-                      <li><%= builder.input :seats, :label => false %></li>
+                      <!-- <%= builder.input :model,
+                        collection: VehicleModel.all,
+                        include_blank: true,
+                        label: false,
+                        input_html: { class: 'chosen-select' }
+                      %> -->
+                      <li>
+                        <select class='chosen-select model form-control'>
+                          
+                        </select>
+                      </li>
+
+                      <li><h5>Número de plazas<span> (conductor incluido)</span>:</h5></li>
+                      <li><%= builder.input :seats, :label => false, :as => :select, :collection =>  ["1", "2", "3", "4", "5"], :input_html => { :class => 'form-control' }%></li>
                       <li><h5>Caballos:</h5></li>
                       <li><li><%= builder.input :horse_power, :label => false %></li></li>
-                      <li><h5>Año de matriculación:</h5></li>
-                      <li><%= builder.input :year_of_registration, :label => false %></li>
+                      <div id="slider-range-max"></div>
+                      <!-- <li><h5>Año de matriculación:</h5></li>
+                      <li><%= builder.input :year_of_registration, :as => 'date_select', :discard_day => true, :discard_month => true, :label => false %></li> -->
                     </ul>
                 </div>
                 <div class="image">

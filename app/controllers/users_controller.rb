@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def show
@@ -34,6 +33,6 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :last_name, :age, :photo, :drive_license_old, :hobbies, :description, :ocupation,
-                                 vehicles_attributes: [:brand, :model, :id, :seats, :horse_power, :year_of_registration, :photo])
+                                 vehicles_attributes: [:vehicle_brand_id, :model, :id, :seats, :horse_power, :year_of_registration, :photo])
   end
 end

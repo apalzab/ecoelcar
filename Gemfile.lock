@@ -105,6 +105,8 @@ GEM
     jquery-turbolinks (2.0.2)
       railties (>= 3.1.0)
       turbolinks
+    jquery-ui-rails (4.1.1)
+      railties (>= 3.1.0)
     json (1.8.1)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -211,6 +213,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
+  jquery-ui-rails
   momentjs-rails (~> 2.5.0)
   nested_form_fields
   newrelic_rpm
