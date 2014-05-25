@@ -8,7 +8,7 @@
           </div>
           <div class="panel-body">
             <article class="personal-info">
-              <div class="modify"><%= f.action :submit, :button_html => { :class => "btn btn-primary", :disable_with => 'Guardando...', :value => 'Guardar cambios' } %></div>
+              <div class="modify"><%= f.action :submit, :button_html => { :class => "btn btn-primary submit", :disable_with => 'Guardando...', :value => 'Guardar cambios' } %></div>
               <strong><h4>Información Personal</h4></strong>
               <div class="basic">
                 <div class="image">
@@ -94,7 +94,7 @@
                 </div>
               </article>
             <% end %>
-            <%= f.action :submit, :button_html => { :class => "btn btn-primary", :disable_with => 'Guardando...', :value => 'Guardar cambios' } %>
+            <%= f.action :submit, :button_html => { :class => "btn btn-primary submit", :disable_with => 'Guardando...', :value => 'Guardar cambios' } %>
           </div>
         </div>
       <% end %>

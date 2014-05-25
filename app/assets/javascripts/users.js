@@ -28,6 +28,7 @@ $('.users.edit').ready(function () {
         range: "max",
         min: 40,
         max: 400,
+        step: 5,
         value: $('#user_vehicles_attributes_0_horse_power').val(),
         slide: function( event, ui ) {
           $( "#user_vehicles_attributes_0_horse_power" ).val( ui.value );
