@@ -30,6 +30,8 @@ gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0'
 
 gem 'chosen-rails'
 
+gem 'will_paginate', '~> 3.0'
+
 #gem 'font-awesome-sass'
 
 # Use aws-ses for email delivery

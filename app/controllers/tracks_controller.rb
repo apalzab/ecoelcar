@@ -1,7 +1,9 @@
 class TracksController < ApplicationController
+  require 'will_paginate/array'
 
   def index
-    @tracks = Track.all
+    @tracks = Track.active.recents.paginate(:page => params[:page], :per_page => 6)
+    # @tracks = Track.all
   end
 
   def create

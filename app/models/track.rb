@@ -21,4 +21,7 @@ class Track < ActiveRecord::Base
 
   validates :origin_station_id, :destination_station_id, :route_spots, :datetime, presence: true
 
+  scope :recents, -> { order('datetime ASC') }
+  scope :active, -> { where('datetime > ?', DateTime.now) }
+
 end
