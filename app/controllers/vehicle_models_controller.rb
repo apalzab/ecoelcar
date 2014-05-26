@@ -1,10 +1,10 @@
 class VehicleModelsController < ApplicationController
   def index
     brand = VehicleBrand.find_by_name(params[:brand_name])
-    if brand
-      respond_to do |format|
-        format.json { render :json => brand.models.all }
-      end
+    if brand.nil?
+      render nothing: true
+    else
+      render json: brand.models
     end
   end
 end
