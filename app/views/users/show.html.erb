@@ -54,10 +54,9 @@
             <div class="info">
             <% if @user.vehicles.first %>
               <ul>
-                <li><span>Marca y Modelo: </span><%= @user.vehicles.first.brand.name if @user.vehicles.first.brand %> <%= @user.vehicles.first.model if @user.vehicles.first.model %></li>
+                <li><span>Marca y Modelo: </span><%= @user.vehicles.first.brand.name if @user.vehicles.first.brand %> <%= @user.vehicles.first.model.name if @user.vehicles.first.model %></li>
                 <li><span>Número de plazas: </span><%= @user.vehicles.first.seats %></li>
                 <li><span>Caballos:</span> <%= @user.vehicles.first.horse_power || I18n.t('profile.attributes.no_data') %></li>
-                <li><span>Año de matriculación: </span><%= @user.vehicles.first.year_of_registration || I18n.t('profile.attributes.no_data') %></li>
               </ul>
             </div>
             <div class="image">

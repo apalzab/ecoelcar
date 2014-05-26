@@ -18,10 +18,16 @@ $('.users.edit').ready(function () {
         }
     });
 
+  $(function() {
+    $('.chosen-select.brand').ready( function() {
+      var brand_name = $('.chosen-single.chosen-single-with-deselect span').text();
+      set_models(brand_name);
+    });
     $('.chosen-select.brand').on('change', function() {
       brand_name = $('.chosen-single.chosen-single-with-deselect span').text();
       set_models(brand_name);
     });
+  });
 
      $(function() {
       $( "#slider-range-max" ).slider({
@@ -48,6 +54,8 @@ $('.users.edit').ready(function () {
             $('.chosen-select.model').append("<option value=" + data[i].id + ">" + data[i].name + "</option>");
           }
         $(".chosen-select.model").trigger("chosen:updated");
+        var model = $('#vehicle_model').data('model');
+        $('#user_vehicles_attributes_0_vehicle_model_id_chosen a span').text(model);
         },
         error: function (jqXHR, textStatus, errorThrown){
                 alert('error');
