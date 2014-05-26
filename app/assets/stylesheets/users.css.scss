@@ -14,14 +14,14 @@ body {
       padding-top: 3em;
       .panel {
         input, textarea {
-          border: none;
-          border: 1px solid #ecf0f1;
+          // border: none;
+          // border: 1px solid #ecf0f1;
           width: 100%;
           margin: .4em 0 .4em 0;
           padding: .4em;
           font-size: 1em;
           &:focus {
-            outline: none;
+            // outline: none;
           }
         }
         span {

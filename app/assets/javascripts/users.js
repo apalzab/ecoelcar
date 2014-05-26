@@ -19,7 +19,7 @@ $('.users.edit').ready(function () {
     });
 
     $('.chosen-select.brand').on('change', function() {
-      brand_name = $('.chosen-single.chosen-single-with-deselect span').text()
+      brand_name = $('.chosen-single.chosen-single-with-deselect span').text();
       set_models(brand_name);
     });
 
@@ -41,11 +41,11 @@ $('.users.edit').ready(function () {
       $.ajax({
         url: 'http://localhost:3000/vehicle_models.json',
         type: 'get',
-        data: {'brand_name': brand_name},
+        data: { 'brand_name': brand_name },
         success: function (data) {
           $('.chosen-select.model').html('');
           for (i = 0; i < data.length; i++) {
-            $('.chosen-select.model').append("<option>" + data[i].name + "</option>");
+            $('.chosen-select.model').append("<option value=" + data[i].id + ">" + data[i].name + "</option>");
           }
         $(".chosen-select.model").trigger("chosen:updated");
         },

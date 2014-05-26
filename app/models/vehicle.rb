@@ -21,6 +21,7 @@
 class Vehicle < ActiveRecord::Base
   belongs_to :user
   belongs_to :brand, class_name: "VehicleBrand", foreign_key: "vehicle_brand_id"
+  belongs_to :model, class_name: "VehicleModel", foreign_key: "vehicle_model_id"
 
   has_attached_file :photo, :default_url => ActionController::Base.helpers.asset_path('missing.png')
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/, message: ''
