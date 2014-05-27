@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_attached_file :photo, :default_url => ActionController::Base.helpers.asset_path('missing.png')
+  has_attached_file :photo, :default_url => ActionController::Base.helpers.asset_path('/assets/missing.png')
 
   has_many :vehicles
   has_many :tracks
