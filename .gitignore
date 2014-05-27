@@ -29,4 +29,5 @@ pickle-email-*.html
 .rvmrc
 
 .idea/
-lib/tasks
+lib/tasks/update_brands.rake
+lib/tasks/update_models.rake

@@ -67,12 +67,11 @@
                       <li><h5>Modelo</h5></li>
                       
                       <li id="vehicle_model" data-model="<%= builder.object.model.name if builder.object.model %>">
-                        <select id="user_vehicles_attributes_0_vehicle_model_id" class='chosen-select model form-control' name="user[vehicles_attributes][0][vehicle_model_id]"
->
-                          
+                        <select id="user_vehicles_attributes_0_vehicle_model_id" class='chosen-select model form-control' name="user[vehicles_attributes][0][vehicle_model_id]">
                         </select>
                       </li>
-
+                      <li><h5>Categoría</h5></li>
+                      <li><%= builder.input :category, :as => :select, :label => false, :collection => VehicleCategory.all, :input_html => { :class => 'form-control' } %></li>
                       <li><h5>Número de plazas<span> (conductor incluido)</span>:</h5></li>
                       <li><%= builder.input :seats, :label => false, :as => :select, :collection =>  ["1", "2", "3", "4", "5"], :input_html => { :class => 'form-control' }%></li>
                       <li><h5>Caballos:</h5></li>

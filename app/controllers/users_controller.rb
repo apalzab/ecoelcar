@@ -33,6 +33,6 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :last_name, :username, :age, :photo, :drive_license_old, :hobbies, :description, :ocupation,
-                                 vehicles_attributes: [:vehicle_brand_id, :vehicle_model_id, :id, :seats, :horse_power, :year_of_registration, :photo])
+                                 vehicles_attributes: [:vehicle_brand_id, :vehicle_model_id, :vehicle_category_id, :id, :seats, :horse_power, :year_of_registration, :photo])
   end
 end

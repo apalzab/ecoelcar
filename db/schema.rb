@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527175143) do
+ActiveRecord::Schema.define(version: 20140527224711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,10 @@ ActiveRecord::Schema.define(version: 20140527175143) do
     t.string "name"
   end
 
+  create_table "vehicle_categories", force: true do |t|
+    t.string "name"
+  end
+
   create_table "vehicle_models", force: true do |t|
     t.string  "name"
     t.integer "vehicle_brand_id"
@@ -92,6 +96,7 @@ ActiveRecord::Schema.define(version: 20140527175143) do
     t.datetime "photo_updated_at"
     t.integer  "vehicle_brand_id"
     t.integer  "vehicle_model_id"
+    t.integer  "vehicle_category_id"
   end
 
 end
