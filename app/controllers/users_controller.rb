@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   def update
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def is_owner?
-    if current_user.id != params[:id].to_i
+    if current_user.id != User.friendly.find(params[:id]).id.to_i
       flash[:notice] = "Can't access to that place"
       redirect_to root_path
     end
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :last_name, :age, :photo, :drive_license_old, :hobbies, :description, :ocupation,
+    params.require(:user).permit(:name, :last_name, :username, :age, :photo, :drive_license_old, :hobbies, :description, :ocupation,
                                  vehicles_attributes: [:vehicle_brand_id, :vehicle_model_id, :id, :seats, :horse_power, :year_of_registration, :photo])
   end
 end

@@ -9,6 +9,8 @@ gem 'pg'
 # Use devise for user management
 gem 'devise'
 
+gem 'friendly_id', '~> 5.0.0'
+
 gem 'rake', '~> 10.3.0'
 
 # Use new relic

@@ -3,6 +3,7 @@ es:
     tracks: rutas
     users: usuarios
     new: nueva
+    edit: editar
   navbar:
     search_routes: 'Buscar rutas'
     share_vehicle: 'Compartir vehículo'

@@ -28,7 +28,7 @@ stations = Station.create([
 ])
 
 
-# paths = Path.create([
+# tracks = Track.create([
 #   { user_id: 1, origin_station_id: 2, destination_station_id: 3, datetime: Time.now.tomorrow },
 #   { user_id: 1, origin_station_id: 2, destination_station_id: 3, datetime: Time.now.tomorrow+1 },
 #   { user_id: 1, origin_station_id: 2, destination_station_id: 3, datetime: Time.now.tomorrow+1 },

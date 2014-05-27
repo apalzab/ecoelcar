@@ -33,8 +33,12 @@
 #
 
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :username
 
-  after_create :set_attrs
+  before_create :set_attrs
+  after_create :initialize_attrs
+
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -49,6 +53,10 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   def set_attrs
+    self.username = self.email.split("@").first.parameterize
+  end
+
+  def initialize_attrs
     self.vehicles.create
   end
 
