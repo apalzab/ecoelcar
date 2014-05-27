@@ -1,9 +1,10 @@
 class TracksController < ApplicationController
-  require 'will_paginate/array'
+require 'will_paginate/array'
+
+  before_action :check_profile, only: [:new]
 
   def index
     @tracks = Track.active.recents.paginate(:page => params[:page], :per_page => 6)
-    # @tracks = Track.all
   end
 
   def create
@@ -19,6 +20,15 @@ class TracksController < ApplicationController
   private
   def track_params
     params.require(:track).permit(:origin_station_id, :destination_station_id, :route_spots, :datetime, :free_seats)
+  end
+
+  def check_profile
+    if current_user.valid_profile?
+      render 'new'
+    else
+      flash[:notice] = "Tienes que configurar tus datos para poder publicar una ruta"
+      redirect_to edit_user_path(current_user)
+    end
   end
 
 end

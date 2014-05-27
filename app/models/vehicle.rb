@@ -25,8 +25,4 @@ class Vehicle < ActiveRecord::Base
 
   has_attached_file :photo, :default_url => ActionController::Base.helpers.asset_path('old_car.png')
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/, message: ''
-
-  # validates :model, :seats, presence: true
-  validates :seats, inclusion: { in: 1..5 }
-
 end

@@ -13,22 +13,22 @@
               <div class="basic">
                 <div class="image">
                   <%= image_tag current_user.photo.url %>
-                  <%= f.input :photo, :as => :file %>
+                  <%= f.input :photo, :as => :file, :label => false %>
                 </div>
                 <div class="bio">
                   <ul>
                     <li><h5>ID usuario | email</h5></li>
                     <li><%= current_user.email || I18n.t('profile.attributes.no_data') %></li>
                     <li><h5>Nombre</h5></li>
-                    <li><%= f.input :name, :label => false %>
+                    <li><%= f.input :name, :label => false, :input_html => { :class => 'form-control' } %>
                     <li><h5>Apellidos</h5></li>
-                    <li><%= f.input :last_name, :label => false %></li>
+                    <li><%= f.input :last_name, :label => false, :input_html => { :class => 'form-control' } %></li>
                     <li><h5>Edad</h5></li>
-                    <li><%= f.input :age, :label => false %></li>
+                    <li><%= f.input :age, :label => false, :input_html => { :class => 'form-control' } %></li>
                     <li><h5>Años de experiencia</h5></li>
-                    <li><%= f.input :drive_license_old, :label => false, :input_html => { :paceholder => 'años' } %></li>
+                    <li><%= f.input :drive_license_old, :label => false, :input_html => { :paceholder => 'años', :class => 'form-control' } %></li>
                     <li><h5>Profesión</h5></li>
-                    <li><%= f.input :ocupation, :label => false, :required => true %></li>
+                    <li><%= f.input :ocupation, :label => false, :input_html => { :class => 'form-control' } %></li>
                   </ul>
                 </div>
               </div>
@@ -36,9 +36,9 @@
               <div class="extra">
                 <ul>
                   <li><h5>Aficiones</h5></li>
-                  <li><%= f.input :hobbies, :label => false %></li>
+                  <li><%= f.input :hobbies, :label => false, :input_html => { :class => 'form-control' } %></li>
                   <li><h5>Descripción</h5></li>
-                  <li><%= f.input :description, :label => false, :input_html => { :rows => '8' } %></li>
+                  <li><%= f.input :description, :label => false, :input_html => { :class => 'form-control', :rows => '8' } %></li>
                 </ul>
               </div>
             </article>

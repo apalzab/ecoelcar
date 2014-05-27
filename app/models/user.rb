@@ -49,6 +49,16 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
   def set_attrs
-    self.vehicles.create(seats: 5)
+    self.vehicles.create
+  end
+
+  def valid_profile?
+    self.vehicles.each do |v|
+      if v.brand.nil? or v.model.nil? or v.seats.nil?
+        break false
+      else
+        return true
+      end
+    end
   end
 end
