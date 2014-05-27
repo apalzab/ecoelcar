@@ -1,36 +1,46 @@
 $('.users.edit').ready(function () {
-    console.log('in edit');
-    $(function() {
-      return $('.chosen-select').chosen({
-              allow_single_deselect: true,
-              no_results_text: 'No se encontró nada',
-              text: 'ghgh'
-      });
-    });
+  console.log('in edit');
+  set_slider();
 
-    $('.vehicle-configuration').bind('DOMNodeInserted', function(event) {
-        if ($('.chosen-single').length == 0) {
-          return $('.chosen-select').chosen({
+  $(function() {
+    return $('.chosen-select').chosen({
             allow_single_deselect: true,
             no_results_text: 'No se encontró nada',
-              text: 'ghgh'
-          });
-        }
+            text: 'ghgh'
     });
+  });
+
+  $('.vehicle-configuration').bind('DOMNodeInserted', function(event) {
+    console.log('node inserted');
+    if ($('.chosen-single').length == 0) {
+      return $('.chosen-select').chosen({
+        allow_single_deselect: true,
+        no_results_text: 'No se encontró nada',
+          text: 'ghgh'
+      });
+    }
+  });
 
   $(function() {
     $('.chosen-select.brand').ready( function() {
       var brand_name = $('.chosen-single.chosen-single-with-deselect span').text();
-      set_models(brand_name);
+      set_models(brand_name, function() {
+        var model = $('#vehicle_model').data('model');
+        $('#user_vehicles_attributes_0_vehicle_model_id_chosen a span').text(model);
+      });
     });
     $('.chosen-select.brand').on('change', function() {
+      console.log('brand changed');
       brand_name = $('.chosen-single.chosen-single-with-deselect span').text();
-      console.log('eee');
-      set_models(brand_name);
+      set_models(brand_name, function() {
+        $('#user_vehicles_attributes_0_vehicle_model_id_chosen a span').text('');
+      });
     });
   });
 
-     $(function() {
+
+
+    function set_slider() {
       $( "#slider-range-max" ).slider({
         range: "max",
         min: 40,
@@ -42,9 +52,9 @@ $('.users.edit').ready(function () {
         }
       });
       $( "#user_vehicles_attributes_0_horse_power" ).val( $( "#slider-range-max" ).slider( "value" ) );
-    });
+    }
 
-    function set_models(brand_name) {
+    function set_models(brand_name, callback) {
       $.ajax({
         url: 'http://localhost:3000/vehicle_models.json',
         type: 'get',
@@ -55,13 +65,16 @@ $('.users.edit').ready(function () {
             $('.chosen-select.model').append("<option value=" + data[i].id + ">" + data[i].name + "</option>");
           }
         $(".chosen-select.model").trigger("chosen:updated");
-        var model = $('#vehicle_model').data('model');
-        $('#user_vehicles_attributes_0_vehicle_model_id_chosen a span').text(model);
+          if (callback) {
+            callback();
+          }
         },
         error: function (jqXHR, textStatus, errorThrown){
-                alert('error');
         }
       });
+      if (callback) {
+          callback();
+      }
     }
 
 

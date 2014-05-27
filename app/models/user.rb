@@ -33,6 +33,8 @@
 #
 
 class User < ActiveRecord::Base
+
+  after_create :set_attrs
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -45,5 +47,8 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :vehicles
 
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
-  validates_presence_of :ocupation
+
+  def set_attrs
+    self.vehicles.create(seats: 5)
+  end
 end
