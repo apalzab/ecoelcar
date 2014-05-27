@@ -51,9 +51,9 @@
           <div class="panel-body">
             <article class="car-info">
               <strong><h4>Mi Coche</h4></strong>
-              <% if current_user.vehicles.count == 0 %>
-                <%= f.add_nested_fields_link :vehicles, 'Añadir vehículo'  %>
-              <% end %>
+<!--               <% if current_user.vehicles.count == 0 %>
+                <%= f.add_nested_fields_link :vehicles, 'Añadir vehículo' %>
+              <% end %> -->
               <%= f.nested_fields_for :vehicles do |builder| %>
                 <div class="info">
                     <ul>
