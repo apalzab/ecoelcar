@@ -54,7 +54,7 @@ $('.users.edit').ready(function () {
 
     function set_models(brand_name, callback) {
       $.ajax({
-        url: 'http://ecoelcar.es/vehicle_models.json',
+        url: '/vehicle_models.json',
         type: 'get',
         data: { 'brand_name': brand_name },
         success: function (data) {
