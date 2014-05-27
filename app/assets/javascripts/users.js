@@ -11,7 +11,6 @@ $('.users.edit').ready(function () {
   });
 
   $('.vehicle-configuration').bind('DOMNodeInserted', function(event) {
-    console.log('node inserted');
     if ($('.chosen-single').length == 0) {
       return $('.chosen-select').chosen({
         allow_single_deselect: true,
@@ -30,7 +29,6 @@ $('.users.edit').ready(function () {
       });
     });
     $('.chosen-select.brand').on('change', function() {
-      console.log('brand changed');
       brand_name = $('.chosen-single.chosen-single-with-deselect span').text();
       set_models(brand_name, function() {
         $('#user_vehicles_attributes_0_vehicle_model_id_chosen a span').text('');
