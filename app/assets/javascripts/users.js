@@ -25,6 +25,7 @@ $('.users.edit').ready(function () {
     });
     $('.chosen-select.brand').on('change', function() {
       brand_name = $('.chosen-single.chosen-single-with-deselect span').text();
+      console.log('eee');
       set_models(brand_name);
     });
   });
