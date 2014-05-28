@@ -22,6 +22,8 @@ gem 'formtastic'
 
 gem 'nested_form_fields'
 
+gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 

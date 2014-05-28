@@ -1,12 +1,26 @@
 <div class="white-wrap">
   <section class="routes">
     <header><h1>Buscar Rutas</h1></header>
+
+
+    <div class="panel panel-primary search">
+      <div class="panel-heading">
+        <%= search_form_for @q do |f| %>
+        <ul>
+          <li><%= f.select :origin_station_id_eq, Station.all.map { |x| [x.name, x.id] }, {}, { :class => 'form-control' } %></li>
+          <li><%= f.select :destination_station_id_eq, Station.all.map { |x| [x.name, x.id] }, {}, { :class => 'form-control' } %></li>
+          <%= f.submit "Buscar", :class => 'btn btn-primary form-control' %>
+          <%= content_tag :th, sort_link(@q, :id) %>
+        </ul>
+        <% end %>
+      </div>
+    </div>
+
     <div class="panel panel-primary search">
       <div class="panel-heading">
         <h1 class="panel-title col-md-9"><%= @tracks.count %> Rutas publicadas</h1>
         <div class="buttons">
           <h5 class="col-md-1">Ordenar por</h5>
-          <%= link_to "Fecha", tracks_path, class: 'btn btn-primary' %>
           <%= link_to "Precio", tracks_path, class: 'btn btn-primary' %>
         </div>
       </div>
@@ -43,7 +57,7 @@
       </section>
       <hr>
   <% end %>
-  <%= will_paginate @tracks %>
+  
     </section>
   
 </div>

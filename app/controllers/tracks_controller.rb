@@ -4,7 +4,8 @@ require 'will_paginate/array'
   before_action :check_profile, only: [:new]
 
   def index
-    @tracks = Track.active.recents.paginate(:page => params[:page], :per_page => 6)
+    @q = Track.search(params[:q])
+    @tracks = @q.result(distinct: true).active.recents.paginate(:page => params[:page], :per_page => 6)
   end
 
   def create

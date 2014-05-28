@@ -37,9 +37,12 @@
     header {
       padding-bottom: 2em;
     }
-    .search .panel-heading h1 {
-      font-size: 1.3em;
-      top: .5em;
+    .search {
+      ul {
+        li {
+          display: inline;
+        }
+      }
     }
     .route {
       width: 98%;
