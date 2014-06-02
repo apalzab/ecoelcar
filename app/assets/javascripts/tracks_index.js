@@ -6,6 +6,10 @@ $('.tracks.index').ready(function () {
       pickTime: false,
   });
 
+  $('.input-group.date').click(function() {
+    $('.input-group-addon').click();
+  });
+
   function get_min_date() {
       var date = new Date();
       date.setDate((date.getDate() - 1));
@@ -13,9 +17,8 @@ $('.tracks.index').ready(function () {
   }
 
   $('.routes input[type="submit"]').click(function() {
-    var date = new Date($('#datetimepicker input').val());
+    var date = moment($('#datetimepicker input').val(), "DD/MM/YYYY HH:mm").format();
     $('#datetime').val(date);
-    alert(date);
   });
 
 });

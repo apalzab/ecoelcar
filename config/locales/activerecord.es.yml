@@ -6,12 +6,17 @@ es:
       user:
         one: usuario
         other: usuarios
+      track:
+        one: ruta
+        other: rutas
 
       attributes:
         user:
           password: 'contraseña'
           password_confirmation: 'contraseña'
           email: 'emilio'
+        track:
+          free_seats: plazas
     errors:
       format: "%{message}"
       models:

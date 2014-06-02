@@ -6,16 +6,22 @@
     <div class="panel panel-primary search">
       <div class="panel-heading">
         <%= search_form_for @q do |f| %>
-        <ul>
-          <li><%= f.select :origin_station_id_eq, Station.all.map { |x| [x.name, x.id] }, {}, { :class => 'form-control' } %></li>
-          <li><%= f.select :destination_station_id_eq, Station.all.map { |x| [x.name, x.id] }, {}, { :class => 'form-control' } %></li>
-          <div class='input-group date' id='datetimepicker'>
-              <input type="text" class="form-control"></input>
-            <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-          </div>
+        <div class="form-dates">
+          <h4>Origen</h4>
+          <%= f.select :origin_station_id_eq, Station.all.map { |x| [x.name, x.id] }, {}, { :class => 'form-control' } %>
+        </div>
+        <div class="form-dates">
+          <h4>Destino</h4>
+          <%= f.select :destination_station_id_eq, Station.all.map { |x| [x.name, x.id] }, {}, { :class => 'form-control' } %></div>
+        <div class='input-group form-dates' id='datetimepicker'>
+          <h4>Fecha</h4>
+          <input type="text" class="form-control date"></input>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
           <input id="datetime" name="track[datetime]" style="display:none">
+        </div>
+            
           <%= f.submit "Buscar", :class => 'btn btn-primary form-control' %>
         </ul>
         <% end %>
@@ -27,7 +33,7 @@
         <h1 class="panel-title col-md-9"><%= @tracks.count %> Rutas publicadas</h1>
         <div class="buttons">
           <h5 class="col-md-1">Ordenar por</h5>
-          <%= content_tag :button, sort_link(@q, :free_seats), :class => 'btn btn-primary' %>
+          <%= content_tag :button, sort_link(@q, :free_seats, 'Plazas'), :class => 'btn btn-primary' %>
         </div>
       </div>
     </div>

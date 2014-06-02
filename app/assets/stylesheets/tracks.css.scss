@@ -40,7 +40,29 @@
     .search {
       ul {
         li {
+          width: 30%;
           display: inline;
+        }
+      }
+      .form-dates {
+        width: 30%;
+        float: left;
+        margin-right: 2em;
+        margin-bottom: 1em;
+        .date {
+          width: 60%;
+          .input-group-addon {
+            float: left;
+          }
+        }
+        .input-group-addon {
+          float: left;
+          padding: .8167em 2em .8167em 1em;
+        }
+      }
+      .btn-primary {
+        a {
+          color: white;
         }
       }
     }
