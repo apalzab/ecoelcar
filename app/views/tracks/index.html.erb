@@ -9,8 +9,14 @@
         <ul>
           <li><%= f.select :origin_station_id_eq, Station.all.map { |x| [x.name, x.id] }, {}, { :class => 'form-control' } %></li>
           <li><%= f.select :destination_station_id_eq, Station.all.map { |x| [x.name, x.id] }, {}, { :class => 'form-control' } %></li>
+          <div class='input-group date' id='datetimepicker'>
+              <input type="text" class="form-control"></input>
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+          <input id="datetime" name="track[datetime]" style="display:none">
           <%= f.submit "Buscar", :class => 'btn btn-primary form-control' %>
-          <%= content_tag :th, sort_link(@q, :id) %>
         </ul>
         <% end %>
       </div>
@@ -21,7 +27,7 @@
         <h1 class="panel-title col-md-9"><%= @tracks.count %> Rutas publicadas</h1>
         <div class="buttons">
           <h5 class="col-md-1">Ordenar por</h5>
-          <%= link_to "Precio", tracks_path, class: 'btn btn-primary' %>
+          <%= content_tag :button, sort_link(@q, :free_seats), :class => 'btn btn-primary' %>
         </div>
       </div>
     </div>

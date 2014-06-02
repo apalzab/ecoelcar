@@ -3,13 +3,23 @@ $('.tracks.new').ready(function () {
   initialize();
 
   $('.route input[type="submit"]').click(function() {
-    var date = new Date($('#datetimepicker input').val());
+    var date = moment($('#datetimepicker input').val(), "DD/MM/YYYY HH:mm").format();
     $('#datetime').val(date);
   });
 
   $('#datetimepicker').datetimepicker({
-      minDate: Date()
+      minDate: get_min_date(),
+      minuteStepping: 5,
+      useCurrent: false,
+      sideBySide: true,
+      format: 'DD/MM/YYYY HH:mm'
   });
+
+  function get_min_date() {
+    var date = new Date();
+    date.setDate((date.getDate() - 1));
+    return date;
+  }
 
   // $(function() {
   //   return $('.chosen-select').chosen({
@@ -23,9 +33,6 @@ $('.tracks.new').ready(function () {
   });
 
   function initialize() {
-      console.log('initializing the map');
-
-
     $('#origin option').click(function() {
       var origin = $(this).data('latlng');
       var lat = origin.split(',')[0];
