@@ -6,7 +6,7 @@ $('.tracks.index').ready(function () {
       pickTime: false,
   });
 
-  $('.input-group.date').click(function() {
+  $('.input-group .date').click(function() {
     $('.input-group-addon').click();
   });
 
