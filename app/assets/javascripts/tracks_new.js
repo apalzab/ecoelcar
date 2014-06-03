@@ -15,6 +15,10 @@ $('.tracks.new').ready(function () {
       format: 'DD/MM/YYYY HH:mm'
   });
 
+  $('.input-group.date').click(function() {
+    $('.input-group-addon').click();
+  });
+
   function get_min_date() {
     var date = new Date();
     date.setDate((date.getDate() - 1));
