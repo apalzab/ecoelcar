@@ -45,12 +45,33 @@ $('.tracks.index').ready(function () {
     // var socket = new google.maps.MarkerImage('static/img/charge_map.png');
     // var user = new google.maps.MarkerImage('static/img/user.png');
 
-      // Adding markers to the map
-    var deusto_marker = new google.maps.Marker({
-        position: new google.maps.LatLng(43.271026,-2.938458),
-        map: map,
-        // icon: socket
+    // Adding markers to the map
+    get_pick_up_points(function(points) {
+      $(points).each(function(index, point) {
+        var latlng = point.latlng;
+        latlng = latlng.split(',');
+        var lat = latlng[0];
+        var lon = latlng[1];
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(lat, lon),
+          map: map,
+          // icon: socket
+        });
+      });
     });
+    
+  }
+
+  function get_pick_up_points(callback) {
+    $.ajax({
+        url: '/stations.json',
+        type: 'get',
+        success: function (points) {
+          callback(points);
+        },
+        error: function (jqXHR, textStatus, errorThrown){
+        }
+      });
   }
 
   // function loadScript() {

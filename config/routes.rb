@@ -11,6 +11,7 @@ Ecoelcar::Application.routes.draw do
     resources :tracks
     resources :users, only: [:show, :edit, :update]
     resources :vehicle_models
+    resources :stations
   end
 
   # Example of regular route:
