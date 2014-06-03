@@ -43,8 +43,8 @@ $('.tracks.index').ready(function () {
     var trafficLayer = new google.maps.TrafficLayer();
     trafficLayer.setMap(map);
 
-    // var socket = new google.maps.MarkerImage('static/img/charge_map.png');
-    // var user = new google.maps.MarkerImage('static/img/user.png');
+    var driver = new google.maps.MarkerImage('assets/driver.png');
+    var user = new google.maps.MarkerImage('assets/user.png');
 
     infowindows = [];
 
@@ -58,7 +58,7 @@ $('.tracks.index').ready(function () {
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(lat, lon),
           map: map,
-          // icon: socket
+          icon: driver
         });
 
         var marker_content =
@@ -88,7 +88,32 @@ $('.tracks.index').ready(function () {
       });
     });
     
+    locateUser();
+    var Userposition;
+
+    function locateUser() {
+      if (navigator.geolocation)
+        {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert('No support for HTML5 geolocation.');
+          }
+    }
+
+    function showPosition(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+
+      var latLng = new google.maps.LatLng(latitude, longitude);
+      var user_marker = new google.maps.Marker({
+        position: latLng,
+        map: map,
+        icon: user
+      });
+      UserPosition = latLng;
+    }
   }
+
 
   function closeInfoWindows() {
     for (i = 0; i < infowindows.length; i++ ) {
