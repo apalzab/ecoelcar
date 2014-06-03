@@ -85,7 +85,7 @@
                   <% if current_user.vehicles.first %>
                     <%= image_tag current_user.vehicles.first.photo.url %>
                   <% end %>
-                  <%= builder.input :photo, :as => :file %>
+                  <%= builder.input :photo, :as => :file, :label => false %>
                 </div>
               </article>
             <% end %>

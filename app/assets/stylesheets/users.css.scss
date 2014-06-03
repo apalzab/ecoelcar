@@ -54,6 +54,8 @@ body {
                 width: 30%;
                 float: left;
                 img {
+                  width: 10em;
+                  height: 10em;
                   max-width: 100%;
                   // border: 1px solid black;
                   box-shadow: 1px 1px 1px #333;
@@ -83,17 +85,21 @@ body {
               }
             }
             .image {
+              padding-right: 1em;
               li {
-                width: 50%;
+                width: 37%;
                 float: right;
                 input {
                   border: none;
                 }
               }
               img {
-                max-width: 50%;
                 border-radius: 5px;
                 box-shadow: 1px 1px 1px #333;
+                width: 15em;
+                height: 10em;
+                max-width: 100%;
+                float: right;
               }
             }
           }
