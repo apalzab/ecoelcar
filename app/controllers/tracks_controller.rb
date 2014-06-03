@@ -9,7 +9,9 @@ require 'will_paginate/array'
   end
 
   def create
-    current_user.tracks.create(track_params)
+    if current_user.tracks.create(track_params)
+      MailerService.track_publication_send_confirmation(current_user.email, "", current_user.tracks.last).deliver
+    end
     @track = current_user.tracks.last
     redirect_to @track
   end
