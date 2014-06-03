@@ -11,7 +11,7 @@ $('.tracks.index').ready(function () {
   });
 
   $('.routes .search .form-dates .map-link').click(function() {
-    $('.white-wrap').hide('slow');
+    $('.white-wrap').hide();
     $('#map').show();
     initialize();
   });
@@ -74,7 +74,7 @@ $('.tracks.index').ready(function () {
             '</select>' +
             '<p><input type = "checkbox" id = "severalRoutes"' +
             '<label for = "severalRoutes">Mostrar varias rutas</label></p>' +
-            '<button class="btn btn-inverse" data-latitude="43.271026" data-longitude="-2.938458">¿Cómo llegar hasta ahí?</button>' +
+            '<button class="btn btn-inverse" data-latitude=' + lat + ' data-longitude='+ lon +'>¿Cómo llegar hasta ahí?</button>' +
           '</div>';
 
         var infowindow = new google.maps.InfoWindow();
@@ -112,8 +112,46 @@ $('.tracks.index').ready(function () {
       });
       UserPosition = latLng;
     }
-  }
 
+    $('#map').delegate('.btn-inverse', "click", function() {
+      closeInfoWindows();
+      var travel_mode = $(this).closest('div').find('select').val();
+      var alternative_routes = $(this).closest('div').find('input[type="checkbox"]:eq(0)').is(':checked');
+      var avoidTolls = $(this).closest('div').find('input[type="checkbox"]:eq(1)').is(':checked');
+      calculateRoute($(this).data('latitude'), $(this).data('longitude'), travel_mode, alternative_routes, avoidTolls);
+    });
+
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+
+    function calculateRoute(latitude, longitude, travel_mode, alternative_routes, avoidTolls) {
+
+      if (travel_mode == "Caminando")
+        travel_mode = google.maps.TravelMode.WALKING;
+      else if (travel_mode == "Transporte público")
+        travel_mode = google.maps.TravelMode.TRANSIT;
+      else if (travel_mode == "Bicicleta")
+        travel_mode = google.maps.TravelMode.BICYCLING;
+      else travel_mode = google.maps.TravelMode.DRIVING;
+
+      var request = {
+        origin: UserPosition,
+        destination: new google.maps.LatLng(latitude,longitude),
+        travelMode: travel_mode,
+        provideRouteAlternatives: alternative_routes,
+        avoidTolls: avoidTolls
+      };
+
+      directionsService.route(request, function(result, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(result);
+        }
+      });
+    }
+
+  } //ends initialize
 
   function closeInfoWindows() {
     for (i = 0; i < infowindows.length; i++ ) {
