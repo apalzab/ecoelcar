@@ -1,5 +1,7 @@
 $('.tracks.index').ready(function () {
 
+  $('.map-tooltip').tooltip();
+
   $('#datetimepicker').datetimepicker({
       minDate: get_min_date(),
       useCurrent: false,
@@ -11,7 +13,7 @@ $('.tracks.index').ready(function () {
     $('.input-group-addon').click();
   });
 
-  $('.routes .search .form-dates .map-link').click(function() {
+  $('.routes .search .form-dates .map-tooltip').click(function() {
     $('.white-wrap').hide();
     $('.navbar').hide();
     $('footer').hide();

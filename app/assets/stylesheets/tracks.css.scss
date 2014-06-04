@@ -44,6 +44,16 @@
           display: inline;
         }
       }
+      .map-tooltip {
+        font-size: .8em;
+        color: gray;
+        margin-bottom: .4em;
+        position: relative;
+        top: -8px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
       .form-dates {
         width: 30%;
         float: left;

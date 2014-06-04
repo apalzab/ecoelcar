@@ -7,11 +7,11 @@
       <div class="panel-heading">
         <%= search_form_for @q do |f| %>
         <div class="form-dates">
-          <h4 class="map-link">Origen</h4>
+          <h4>Origen <span class="map-tooltip" data-toggle="tooltip" title="" data-original-title="Ver mapa">?</span></h4>
           <%= f.select :origin_station_id_eq, Station.all.map { |x| [x.name, x.id] }, { include_blank: true }, { :class => 'form-control' } %>
         </div>
         <div class="form-dates">
-          <h4 class="map-link">Destino</h4>
+          <h4 class="map-link">Destino <span class="map-tooltip" data-toggle="tooltip" title="" data-original-title="Ver mapa">?</span></h4>
           <%= f.select :destination_station_id_eq, Station.all.map { |x| [x.name, x.id] }, { include_blank: true }, { :class => 'form-control' } %></div>
         <div class='input-group form-dates' id='datetimepicker'>
           <h4>Fecha</h4>
