@@ -1,4 +1,5 @@
 $('.tracks.index').ready(function () {
+
   $('#datetimepicker').datetimepicker({
       minDate: get_min_date(),
       useCurrent: false,
@@ -12,6 +13,10 @@ $('.tracks.index').ready(function () {
 
   $('.routes .search .form-dates .map-link').click(function() {
     $('.white-wrap').hide();
+    $('.navbar').hide();
+    $('footer').hide();
+    $('.page-wrap').hide();
+    $('body').append('<article id="map" class="full" style="display:none"/></article><div id="directionsPanel"></div>');
     $('#map').show();
     initialize();
   });
