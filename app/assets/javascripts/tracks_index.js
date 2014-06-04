@@ -86,7 +86,7 @@ $('.tracks.index').ready(function () {
                       '<option>Caminando</option>' +
                       '<option>Coche</option>' +
                       '<option>Transporte público</option>' +
-                      '<option>Bicicleta</option>' +
+                      // '<option>Bicicleta</option>' +
             '</select>' +
             '<p><input type = "checkbox" id = "severalRoutes"' +
             '<label for = "severalRoutes">Mostrar varias rutas</label></p>' +
@@ -133,9 +133,16 @@ $('.tracks.index').ready(function () {
       closeInfoWindows();
       var travel_mode = $(this).closest('div').find('select').val();
       var alternative_routes = $(this).closest('div').find('input[type="checkbox"]:eq(0)').is(':checked');
+      console.log(alternative_routes);
       var avoidTolls = $(this).closest('div').find('input[type="checkbox"]:eq(1)').is(':checked');
-      calculateRoute($(this).data('latitude'), $(this).data('longitude'), travel_mode, alternative_routes, avoidTolls);
-      $('#map').css('width', '80%');
+      var status = calculateRoute($(this).data('latitude'), $(this).data('longitude'), travel_mode, alternative_routes, avoidTolls);
+      if ($('#directionsPanel').length != 0) {
+        $('#directionsPanel').show();
+        $('#map').css('width', '80%');
+      } else {
+          $('#map').css('width', '100%');
+          $('#directionsPanel').hide();
+        }
     });
 
     var directionsService = new google.maps.DirectionsService();
@@ -145,6 +152,7 @@ $('.tracks.index').ready(function () {
 
     function calculateRoute(latitude, longitude, travel_mode, alternative_routes, avoidTolls) {
 
+console.log(travel_mode);
       if (travel_mode == "Caminando")
         travel_mode = google.maps.TravelMode.WALKING;
       else if (travel_mode == "Transporte público")
@@ -152,7 +160,6 @@ $('.tracks.index').ready(function () {
       else if (travel_mode == "Bicicleta")
         travel_mode = google.maps.TravelMode.BICYCLING;
       else travel_mode = google.maps.TravelMode.DRIVING;
-
       var request = {
         origin: UserPosition,
         destination: new google.maps.LatLng(latitude,longitude),
@@ -164,6 +171,8 @@ $('.tracks.index').ready(function () {
       directionsService.route(request, function(result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
           directionsDisplay.setDirections(result);
+        }
+        else {
         }
       });
     }
