@@ -16,9 +16,20 @@ $('.tracks.index').ready(function () {
     $('.navbar').hide();
     $('footer').hide();
     $('.page-wrap').hide();
-    $('body').append('<article id="map" class="full" style="display:none"/></article><div id="directionsPanel"></div>');
+    $('body').append('<article id="map" class="full" style="display:none"/></article><div id="directionsPanel" class="directions-panel"></div><button id="close-map" class="close-map">&times;</button>');
+    var closeButton = document.querySelector('#button'),
+    controlPosition = google.maps.ControlPosition.RIGHT_TOP;
     $('#map').show();
     initialize();
+  });
+
+  $('body').delegate('#close-map', 'click', function() {
+    $('.white-wrap').show();
+    $('.navbar').show();
+    $('footer').show();
+    $('.page-wrap').show();
+    $('#map').remove();
+    $('#directionsPanel').remove();
   });
 
   function get_min_date() {
@@ -124,6 +135,7 @@ $('.tracks.index').ready(function () {
       var alternative_routes = $(this).closest('div').find('input[type="checkbox"]:eq(0)').is(':checked');
       var avoidTolls = $(this).closest('div').find('input[type="checkbox"]:eq(1)').is(':checked');
       calculateRoute($(this).data('latitude'), $(this).data('longitude'), travel_mode, alternative_routes, avoidTolls);
+      $('#map').css('width', '80%');
     });
 
     var directionsService = new google.maps.DirectionsService();
