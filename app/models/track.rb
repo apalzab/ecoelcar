@@ -16,12 +16,11 @@
 class Track < ActiveRecord::Base
   has_one :origin_station, class_name: Station
   has_one :destination_station, class_name: Station
-
+  has_many :bookings
   belongs_to :user
 
   validates :origin_station_id, :destination_station_id, :route_spots, :datetime, presence: true
 
-  scope :recents, -> { order('datetime ASC') }
   scope :active, -> { where('datetime > ?', DateTime.now) }
-
+  scope :recents, -> { order('datetime ASC') }
 end

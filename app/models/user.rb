@@ -48,6 +48,8 @@ class User < ActiveRecord::Base
 
   has_many :vehicles
   has_many :tracks
+  has_many :bookings
+
   accepts_nested_attributes_for :vehicles
 
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/

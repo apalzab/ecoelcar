@@ -24,6 +24,6 @@ class Vehicle < ActiveRecord::Base
   belongs_to :model, class_name: "VehicleModel", foreign_key: "vehicle_model_id"
   belongs_to :category, class_name: "VehicleCategory", foreign_key: "vehicle_category_id"
 
-  has_attached_file :photo, :default_url => ActionController::Base.helpers.asset_path('/assets/old_car.png')
+  has_attached_file :photo, :default_url => ActionController::Base.helpers.asset_path('/assets/missing.png')
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/, message: ''
 end
