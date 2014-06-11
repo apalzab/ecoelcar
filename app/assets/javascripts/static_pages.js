@@ -22,10 +22,10 @@ ready = function() {
     $('.login').modal('show');
   });
 
-  setTimeout(function() {
-      $(".notice").hide("slow");
-      console.log('executed');
-  }, 5000);
+  // setTimeout(function() {
+  //     $(".notice").hide("slow");
+  //     console.log('executed');
+  // }, 5000);
 
 };
 

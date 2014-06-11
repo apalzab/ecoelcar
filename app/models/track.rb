@@ -23,4 +23,8 @@ class Track < ActiveRecord::Base
 
   scope :active, -> { where('datetime > ?', DateTime.now) }
   scope :recents, -> { order('datetime ASC') }
+
+  def is_active
+    self.datetime > DateTime.now
+  end
 end

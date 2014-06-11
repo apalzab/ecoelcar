@@ -30,6 +30,7 @@
 #  photo_file_size        :integer
 #  photo_updated_at       :datetime
 #  age                    :integer
+#  username               :string(255)
 #
 
 class User < ActiveRecord::Base

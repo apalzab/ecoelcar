@@ -9,7 +9,9 @@ Ecoelcar::Application.routes.draw do
 
   localized do
     resources :tracks
-    resources :users, only: [:show, :edit, :update]
+    resources :users, only: [:show, :edit, :update] do
+      resources :bookings
+    end
     resources :vehicle_models
     resources :stations
   end

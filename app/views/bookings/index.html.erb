@@ -1,0 +1,65 @@
+<div class="white-wrap">
+  <section class="bookings">
+    <header><h1>Mis Reservas</h1></header>
+    <nav>
+      <ul>
+        <li><a class="active">Rutas Publicadas</a></li>
+        <li><a class="disabled">Rutas Reservadas</a></li>
+      </ul>
+    </nav>
+
+    <section class="tracks">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><h4>Origen</h4></th>
+            <th><h4>Destino</h4></th>
+            <th><h4>Fecha</h4></th>
+            <th><h4>Estado</h4></th>
+         </tr>
+        </thead>
+        <tbody>
+          <% @tracks.each do |track| %>
+            <tr>
+              <td><%= Station.find(track.origin_station_id).name %></td>
+              <td><%= Station.find(track.destination_station_id).name %></td>
+              <td><%= track.datetime %></td>
+              <% if track.is_active %>
+                <td><span class="badge badge-warning">Activa</span></td>
+              <% else %>
+                <td><span class="badge">Completada</span></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="reservations">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><h4>Origen</h4></th>
+            <th><h4>Destino</h4></th>
+            <th><h4>Fecha</h4></th>
+            <th><h4>Estado</h4></th>
+         </tr>
+        </thead>
+        <tbody>
+          <% @bookings.each do |booking| %>
+            <tr>
+              <td><%= Station.find(booking.track.origin_station_id).name %></td>
+              <td><%= Station.find(booking.track.destination_station_id).name %></td>
+              <td><%= booking.track.datetime %></td>
+              <% if booking.track.is_active %>
+                <td><span class="badge badge-warning">Activa</span></td>
+              <% else %>
+                <td><span class="badge">Completada</span></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </section>
+
+</div>

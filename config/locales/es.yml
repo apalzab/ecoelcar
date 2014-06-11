@@ -2,11 +2,13 @@ es:
   routes:
     tracks: rutas
     users: usuarios
+    bookings: reservas
     new: nueva
     edit: editar
   navbar:
     search_routes: 'Buscar rutas'
     share_vehicle: 'Compartir vehículo'
+    bookings: 'Mis reservas'
     log_in: 'Iniciar sesión'
     new_user: 'Nuevo usuario'
     profile: 'Perfil'

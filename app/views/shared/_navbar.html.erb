@@ -12,6 +12,7 @@
       <% if user_signed_in? %>
         <li><%= link_to I18n.t("navbar.search_routes"), tracks_path %></li>
         <li><%= link_to I18n.t("navbar.share_vehicle"), new_track_path %></li>
+        <li><%= link_to I18n.t("navbar.bookings"), user_bookings_path(current_user) %></li>
       <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">

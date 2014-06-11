@@ -1,0 +1,90 @@
+// Place all the styles related to the Bookings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.white-wrap{
+  .bookings {
+    padding: 1em 2em 0 2em;
+    header {
+      padding-bottom: 2em;
+      text-align: center;
+    }
+    nav {
+      text-align: center;
+    }
+
+    nav ul li {
+        display: inline;
+    }
+
+    nav a {
+      position: relative;
+      display: inline-block;
+      margin: 15px 25px;
+      outline: none;
+      color: #333;
+      text-decoration: none;
+      letter-spacing: 1px;
+      font-weight: 400;
+      text-shadow: 0 0 1px rgba(255,255,255,0.3);
+      font-size: 1.35em;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      outline: none;
+    }
+
+    nav a {
+      padding: 8px 0;
+      cursor: pointer;
+    }
+
+    nav a::after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: rgba(51, 51, 51, 1);
+      content: '';
+      opacity: 0;
+      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+      -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+      transition: opacity 0.3s, transform 0.3s;
+      -webkit-transform: translateY(10px);
+      -moz-transform: translateY(10px);
+      transform: translateY(10px);
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+      -moz-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+
+    nav .active {
+      border-bottom: solid 3px #333;
+    }
+    table {
+      text-align: center;
+      tr {
+        border-bottom: 1px solid;
+        border-color: rgba(220, 228, 236, 1)
+      }
+    }
+
+    table thead th {
+      text-align: center;
+    }
+
+    table .badge.badge-warning {
+      background-color: orange;
+    }
+    .reservations {
+      display: none;
+    }
+  }
+}

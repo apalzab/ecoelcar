@@ -16,6 +16,7 @@
 #  photo_updated_at     :datetime
 #  vehicle_brand_id     :integer
 #  vehicle_model_id     :integer
+#  vehicle_category_id  :integer
 #
 
 class Vehicle < ActiveRecord::Base
