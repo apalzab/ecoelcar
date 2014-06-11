@@ -6,6 +6,9 @@ class BookingsController < ApplicationController
     end
   end
 
+  def new
+  end
+
   def is_owner?
     if current_user.id != User.friendly.find(params[:user_id]).id.to_i
       flash[:notice] = "Can't access to that place"
