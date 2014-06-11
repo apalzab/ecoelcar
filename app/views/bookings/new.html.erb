@@ -1,5 +1,30 @@
 <div class="white-wrap">
   <section class="bookings">
     <h1>Reservar plaza</h1>
+    <section class="tracks">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><h4>Origen</h4></th>
+            <th><h4>Destino</h4></th>
+            <th><h4>Fecha</h4></th>
+            <th><h4>Precio</h4></th>
+         </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= Station.find(@track.origin_station_id).name %></td>
+            <td><%= Station.find(@track.destination_station_id).name %></td>
+            <td><%= @track.datetime %></td>
+            <td><%= rand(0.6..1.2).round(2) %>€</td>
+          </tr>
+        </tbody>
+      </table>
+      <%= semantic_form_for(:booking, :url => user_bookings_path, class: 'hello') do |f| %>
+        <input id="track_id" name="booking[track_id]" value=<%= @track.id %> style="display:none">
+
+        <%= f.submit class: 'btn btn-danger', value: 'RESERVAR', disable_with: "Reservando...", confirm:"Vas a hacer una reserva!" %>
+      <% end %>
+    </section>
   </section>
 </div>

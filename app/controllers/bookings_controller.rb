@@ -7,6 +7,11 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @track = Track.find(params[:track_id])
+  end
+
+  def create
+    Booking.create(booking_params)
   end
 
   def is_owner?
@@ -15,5 +20,10 @@ class BookingsController < ApplicationController
       redirect_to root_path
     else true
     end
+  end
+
+  private
+  def booking_params
+    params.require(:booking).permit(:track_id)
   end
 end

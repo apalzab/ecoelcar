@@ -32,7 +32,7 @@
         </div>
         <div class="book">
           <% if  current_user.id != @track.user_id %>
-            <%= link_to 'RESERVAR PLAZA', new_user_booking_path(current_user), class: 'btn btn-warning form-control' %>
+            <%= link_to 'RESERVAR PLAZA', new_user_booking_path(current_user, track_id: @track.id), class: 'btn btn-warning form-control' %>
           <% end %>
         </div>
       </div>
