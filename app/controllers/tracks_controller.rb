@@ -5,7 +5,7 @@ require 'will_paginate/array'
 
   def index
     @q = Track.search(params[:q])
-    @tracks = @q.result(distinct: true).active.recents.paginate(:page => params[:page], :per_page => 6)
+    @tracks = @q.result(distinct: true).active.recents.with_free_seats.paginate(:page => params[:page], :per_page => 6)
   end
 
   def create

@@ -21,10 +21,18 @@ class Track < ActiveRecord::Base
 
   validates :origin_station_id, :destination_station_id, :route_spots, :datetime, presence: true
 
+  scope :with_free_seats, -> { where('free_seats >= 1') }
   scope :active, -> { where('datetime > ?', DateTime.now) }
   scope :recents, -> { order('datetime ASC') }
 
+  proc { validated_challenges.where() }
+
   def is_active
     self.datetime > DateTime.now
+  end
+
+  def decrease_free_seats
+    self.free_seats -= 1
+    self.save
   end
 end

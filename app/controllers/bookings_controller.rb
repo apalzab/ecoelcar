@@ -11,7 +11,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    Booking.create(booking_params)
+    if Booking.create(booking_params)
+      Track.find(booking_params[:track_id]).decrease_free_seats
+    end
   end
 
   def is_owner?
