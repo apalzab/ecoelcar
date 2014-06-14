@@ -1,0 +1,25 @@
+<div class="white-wrap">
+  <section class="bookings">
+    <h2>Datos de la reserva</h2>
+    <section class="tracks">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><h4>Origen</h4></th>
+            <th><h4>Destino</h4></th>
+            <th><h4>Fecha</h4></th>
+            <th><h4>Precio</h4></th>
+         </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= Station.find(@booking.track.origin_station_id).name %></td>
+            <td><%= Station.find(@booking.track.destination_station_id).name %></td>
+            <td><%= get_human_week_day(@booking.track.datetime) %> <%= @booking.track.datetime.to_date.strftime('%d') %> de <%= get_human_month(@booking.track.datetime) %> - <%= @booking.track.datetime.time.strftime("%H:%M") %></td>
+            <td><%= rand(0.6..1.2).round(2) %>€</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+</div>

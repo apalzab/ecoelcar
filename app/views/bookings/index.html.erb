@@ -23,7 +23,7 @@
             <tr>
               <td><%= Station.find(track.origin_station_id).name %></td>
               <td><%= Station.find(track.destination_station_id).name %></td>
-              <td><%= track.datetime %></td>
+              <td><%= get_human_week_day(track.datetime) %> <%= track.datetime.to_date.strftime('%d') %> de <%= get_human_month(track.datetime) %> - <%= track.datetime.time.strftime("%H:%M") %></td>
               <% if track.is_active %>
                 <td><span class="badge badge-warning">Activa</span></td>
               <% else %>
@@ -50,7 +50,7 @@
             <tr>
               <td><%= Station.find(booking.track.origin_station_id).name %></td>
               <td><%= Station.find(booking.track.destination_station_id).name %></td>
-              <td><%= booking.track.datetime %></td>
+              <td><%= get_human_week_day(booking.track.datetime) %> <%= booking.track.datetime.to_date.strftime('%d') %> de <%= get_human_month(booking.track.datetime) %> - <%= booking.track.datetime.time.strftime("%H:%M") %></td>
               <% if booking.track.is_active %>
                 <td><span class="badge badge-warning">Activa</span></td>
               <% else %>

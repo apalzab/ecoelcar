@@ -5,4 +5,12 @@ class MailerService < ActionMailer::Base
     @track = track
     mail(to: email, subject: subject)
   end
+
+  def booking_confirmation_to_owner(email, subject = "Has hecho una reserva", booking)
+    @booking = booking
+    mail(to: email, subject: subject)
+  end
+
+  def booking_confirmation_to_passenger
+  end
 end
