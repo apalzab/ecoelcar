@@ -9,10 +9,10 @@ require 'will_paginate/array'
   end
 
   def create
-    if current_user.tracks.create(track_params)
+    @track = current_user.tracks.create(track_params)
+    if @track
       MailerService.track_publication_send_confirmation(current_user.email, "", current_user.tracks.last).deliver
     end
-    @track = current_user.tracks.last
     redirect_to @track
   end
 
@@ -22,7 +22,7 @@ require 'will_paginate/array'
 
   private
   def track_params
-    params.require(:track).permit(:origin_station_id, :destination_station_id, :route_spots, :datetime, :free_seats)
+    params.require(:track).permit(:origin_station_id, :destination_station_id, :route_spots, :datetime, :free_seats, :distance)
   end
 
   def check_profile

@@ -16,7 +16,7 @@
             <td><%= Station.find(@track.origin_station_id).name %></td>
             <td><%= Station.find(@track.destination_station_id).name %></td>
             <td><%= get_human_week_day(@track.datetime) %> <%= @track.datetime.to_date.strftime('%d') %> de <%= get_human_month(@track.datetime) %> - <%= @track.datetime.time.strftime("%H:%M") %></td>
-            <td><%= rand(0.6..1.2).round(2) %>€</td>
+            <td><%= @track.price.round(2) %>€</td>
           </tr>
         </tbody>
       </table>

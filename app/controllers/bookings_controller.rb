@@ -11,15 +11,13 @@ class BookingsController < ApplicationController
   end
 
   def create
+    old_price = Booking.where(track_id: booking_params[:track_id]).last.price rescue ActiveRecord::RecordNotFound
     @booking = current_user.bookings.create(booking_params)
     if @booking
       Track.find(booking_params[:track_id]).decrease_free_seats
       flash[:notice] = "#{current_user.name.capitalize}, acabas de hacer una reserva! Puedes acceder a todas tus reservas desde el área de Mis Reservas de la barra de navegación."
-      # send confirmation emails
-      MailerService.booking_confirmation_to_owner(current_user.email, "", @booking).deliver #user that has made the booking
-      # calculate new price
-      # there must be a worker that charges the users when they have done a route
-      #notify other users about the new price
+      MailerService.booking_confirmation(current_user.email, "", @booking).deliver #user that has made the booking
+      @booking.update_price(old_price)
     end
   end
 

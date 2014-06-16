@@ -1,0 +1,6 @@
+<h2><%= @booking.user.name %>, vas a pagar menos en tu próximo viaje!</h2>
+<p>Tu ruta del <%= get_human_week_day(@booking.track.datetime) %> <%= @booking.track.datetime.to_date.strftime('%d') %> de <%= get_human_month(@booking.track.datetime) %> - <%= @booking.track.datetime.time.strftime("%H:%M") %> ha cambiado de precio!</p>
+<p>Origen: <%= Station.find(@booking.track.origin_station_id).name %></p>
+<p>Destino: <%= Station.find(@booking.track.destination_station_id).name %></p>
+<p>Antiguo precio: <%= @old_price %></p>
+<p>Nuevo precio: <%= @booking.price %></p>

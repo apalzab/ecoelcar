@@ -11,6 +11,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  free_seats             :integer
+#  distance               :float
 #
 
 class Track < ActiveRecord::Base
@@ -18,6 +19,8 @@ class Track < ActiveRecord::Base
   has_one :destination_station, class_name: Station
   has_many :bookings
   belongs_to :user
+
+  before_save :set_price
 
   validates :origin_station_id, :destination_station_id, :route_spots, :datetime, presence: true
 
@@ -34,5 +37,14 @@ class Track < ActiveRecord::Base
   def decrease_free_seats
     self.free_seats -= 1
     self.save
+  end
+
+  def set_price
+    if self.distance < 1000
+      self.price = 1
+    elsif
+      self.price = 1 + ( (self.distance/1000) * 0.05 )
+    end
+    self.price = self.price * (self.free_seats.to_f/self.user.vehicles.first.seats.to_f)
   end
 end

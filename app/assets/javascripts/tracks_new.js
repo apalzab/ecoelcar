@@ -100,6 +100,7 @@ $('.tracks.new').ready(function () {
           destination_marker.setMap(null);
           track_spots = result.routes[0].overview_path;
           $('#track_spots').text(track_spots.join(';'));
+          $('#distance').val(result.routes[0].legs[0].distance.value);
         }
       });
     }
