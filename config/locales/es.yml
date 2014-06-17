@@ -29,7 +29,7 @@ es:
         header: 'Comparte tu vehículo'
         description: ''
       search_routes:
-        header: 'Busca rutas publicadas'
+        header: 'Busca rutas'
         description: ''
 
   profile:
