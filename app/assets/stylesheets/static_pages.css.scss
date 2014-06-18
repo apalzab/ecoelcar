@@ -76,6 +76,7 @@
   video {
     clear: both;
   }
+
   article {
     margin-top: .5em;
     padding-bottom: 1.5em;
@@ -114,6 +115,12 @@
   background-color: #fff;
   border-top: 1px solid rgba(255,255,255,0.1);
   border-bottom: 1px solid rgba(0,0,0,0.1);
+   .row.first {
+    // color: red;
+    img {
+      // width: 80%;
+    }
+  }
   header {
     font-size: 2.3em;
     text-align: center;
